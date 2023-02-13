@@ -1,0 +1,363 @@
+
+----- for VS Code ---------
+
+clt + D
+Alt + up down
+shift + Alt + up down
+ctrl + /        
+ctrl + shift + T
+ul>li*5
+Alt + Tab     scroll in window
+
+ctrl + h       // replace text with anthor text
+
++
+-----google Search 
+
+site:php.net 			// retuern result just from php.net
+
+
+ SS64.com
+-------- Commend Line ----------
+
+cd 				// change deretory  that main folder
+cd ..			// go back
+cd fold\ 		// go in the fold
+cd \			// go to root
+cd C:\user		// go to c:\ and users
+
+mkdir | md 		// create new folder (directory)
+mkdir fold1 fold2 fold3 	// creat multi folder in one line
+mkdir 'abdou smai'  		// creat folder if have space between
+mkdir ..\test				// creat foldr in back parent of folder 
+
+mkdir -p images/phone/famile 	// make tree of folder 
+
+pwd 						// show chain(url) of folder
+
+touch file.txt 				// creat new file.txt
+file file.txt 				// show infomatin 
+
+rm 					// delet 
+rm -r
+rm -i 			// confirm before deleat
+rm -d				// delet unique the empty 
+rmdir 			// delet emty folder
+
+cp fold1 fold2		//  mak a copy form fold1 to fold2
+cp -r							// copy folde
+cp -rv 						// show progresse
+rename x z 			// rename folder from x to z 
+
+mv 	(move)				// rename or move
+mv test testing		// rename test to testing
+mv test fonts		// move test folder in fonts folder
+mv test ..\			// move test folder to back parent
+mv test \ 			// move test folder to the root
+
+mv -i file			// confirme (if have same file name)
+
+
+echo "string" > abdou.txt 	// creat abdou file and write to it or overide
+echo "string" >> abdou.txt 	// if file exist not overide
+
+cat abdou.txt 				// show text of abdou.txt
+cat *						// show text of all file .txt
+cat abdou.txt > test.txt 	// copy the text of abdou.txt to test and overide it, '>>' for not override
+							// creat new if it is not exist
+
+nano file.txt 		// text editor for command line
+
+ln -s /opt/lampp/htdocs/project /home/abdou/Document 		// make soft link folder
+
+ls -l
+ls -lh			// show size of files whith kB
+ls -ltr 		// show files whith last modifie
+
+tail file.txt 				// show last 10 line in file
+tail -n 5 file.txt		//  show last 5 line
+
+tar zcvf imag.tar.gz images 		// compress images folder to imag.tar.gz
+tar zxvf imag.tar.gz 					// extract file
+unzip file.zip						// extract zip file
+
+
+addgroup nameGroup			// add group
+delgroup nameGroup			// delet group
+groupmod nameGroup -n newname oldname 		// modefie name group
+
+cat /etc/group 				// show groups
+getent group | grep nameGroup 		// find group info
+
+adduser nameUser 			// add user to system
+useradd nameUser			// add user but not for 
+useradd -m -G sudo,games.sami -s /bin/bash wafa
+		-m 				// add folder in Home
+		-G sudo,sami 	// add user to group (sudo,sami)
+		-s /bin/bash	// can to enter to system  
+		
+usermod -G games,sami abdou	// modefi groups of user abdou
+passwd sami 			// change password of sami user
+
+cat /etc/passwd
+
+userdel						// delet just user not Group and folder
+userdel -r 				// delet user and all think about it
+
+groups  abdou				// show groups of abdou
+gpasswd -a sami abdou			// add sami (user) to (group) abdou
+
+chmod				// change premition
+		r - read:  4
+		w - writ:  2
+		x - execut 1
+		
+		u - user
+		g - group
+		o - other
+		
+chmod 754 			// rwx>u | rw>g | r>o
+chmod g-x			// remove x(execut) to group
+chmod o+w			// add w(writ) to other
+chmod ugo+w			// add w to all
+chmod +x 			// add x to all
+
+chgrp groupName fileName	// change ownershep group of file
+chown userName fileName		// change ownershep user of file
+chown abdou:root file.txt		// change the creater (abdou => user; root => group )
+chown sami -R dirName 			// change ownershep of directory and all content
+
+chmod 755 -R dirName		// change permition of file and content of directory
+
+file nameFile 				// show type of file
+
+gpg -c nameFile 			// sucrite file
+gpg -o outFile -c nameFile 		// sucrit file and the name is outFile
+gpg -o outFile -c --cipher-algo AES256 	nameFile	// cipher file with algo AES256
+
+pgp -o outFile fileEnc			// 
+----
+exit
+
+ssh -p 22 username@domain.com			// connect to server with ssh connect
+
+scp file2 abdou@domain.com:/home/u 		// send file to server whith ssh conect
+
+wget https://badnishop/css		downlod file from web
+
+shutdown -h now					// shutdown now
+shutdown -h +10					// after 10 minit 
+reboot
+
+find ~ -empty 				// find all file emty
+find /opt/lampp -name "index.php"		// search file in folder
+find /opt/lampp -name "index*"			// search all file begin whith index
+
+grep string fils.txt 		// search string in file.txt
+grep -r string * 				// search in all fille and folder
+grep string -r -l
+
+cat main.css | grep "float" 	// find "float" in main.css file
+
+
+clt + c 			// stop all 
+alias 				// short of command
+
+  && 				// for do two comande in one line
+
+whoami 			// show user
+
+
+ipconfig
+tasklist
+systeminfo		//
+
+ipconfig > ipfile.txt 	// copy the text ipconfig to ipfile.txt
+ipconfig | clip 	// copy the text ipconfig to the clip 
+
+ifconfig
+
+service --status-all			// show status of all program
+
+free 	-h				// ram free space
+
+ps -ef | more			// show prosses in system
+ps -ef | grep "brave"		// search prosses "brave"
+
+kill 535 (PID)		// kill prosess with id (535)
+
+top 					// system info now
+top -u root 			// show presser of root
+
+df 						// disk connect
+du 					// show size of file
+du -s				// show size of directory
+
+w 					// show user connet in system
+who					// same (w) but small info
+
+
+crontab 			// serch it
+
+man cp				// show manual of cp command
+whatis mkdir		// show description of a command
+
+history 			// show all history of command
+history | grep "apt" 	// search of command apt
+
+bash file.sh 			// execuite shell file
+
+nmap 				// scan port open
+
+ufw status
+
+apt full-upgrade
+
+
+-------- cmd ------------
+
+color -help			// show color 
+color 1c		// the fist is background other is the paragraphe, for the default:  color
+
+title heading	// change the title of cmd for heading
+
+mkdir newfol	//  create a new folder
+cd folder		// open the folder 
+cd..			// go back
+explorer		// open the folder with GUI
+cls				// clear all line
+dir 			//  show all folder in curent folder
+chdir 			// show chain(url) folder
+
+move test testing 	// rename the test folder to testing
+
+df -h
+
+du -h 					// size of special file
+du -sh
+
+---------- git ------------
+
+git init
+
+git clone [https]   			// download the repsetry in this folder
+git add  <nameFile>				// add file in staging area
+git status
+git commit -m "comant"
+
+git restore --staged <path>   					// remove form stage area
+git restore  <path>       						// ignord the new changed in the file
+git restore --source <commit source> <path>  	// reset special version
+git rm
+
+git reset head <nameF> 			// deleat folder from staging area
+
+
+git branch
+git branch master           // and new branch 'master'
+git checkout master         // go the 'master' branch
+git checkout -b scroll      // creat new branch and go to it
+git branch -m master scroll // renam master to scroll
+git branch -d master        // delet 'master' branch if it is merged
+git branch -D master        // delet master branch
+
+
+git merge master        // merge(group) master branch to main branch
+
+git remote -v   // get the remot name
+git remote add origin git@github.com:abdousami02/secend-web-sit.git  
+                                  // add locla branch to github 
+
+git push -u RemotName branchName    // pull and push
+git push RemotName branchName
+
+git pull
+
+git config -l                   // show all configaration
+git config --global --edit      // show config in editor
+
+git config --global user.name ""
+git config --global user.email ""
+
+ssh-keygen -t rsa -b 4096 -c "myEmail"      generat a public key 
+
+ssh -T git@github.com
+
+git config --global alias.st status     // short 'status' to 'st'
+git config --global alisas.st           // show the short of 'st'
+
+git log         // show all commit
+git log -p      // show modification commit and don't show the commit not modifi
+
+
+git remote add origin git@github.com:abdousami02/badnitech.git
+git push -u origin main
+
+
+** stash **
+
+git stash     // hide folder added in box  (the file is not commit)
+git stash list    // show list of hidden file
+git stash pop     // unhide the last
+git stash pop stash@{2}  // show the stash number 2
+git stash apply   // unhide copy of origin stash
+git stash -u                // --include-untracked
+git stash -a                // include ignord file
+git stash -- test.txt test2.txt       // include just test.txt 
+
+git stash save "addTextHier"   // add comment for all stash file
+git stash push -m "messag" test.txt test2.txt    // stash special file or folder
+
+git stash drop stash@{2} // delet the stash 2 or the last if not write stash@{}
+git stash show stash@{2} // show the file inside the stash not for stashed from untracked file 
+git stash clear           // delet all stash
+
+git clean -n      // show the file untraked and while remove
+git clean -f      // delet the file is untraked
+
+git stash branch name-new-branch stash@{1}     //Creating a branch from stash
+
+******
+
+git reset --hard <source-commit>   // return in special source commi and delet modifi
+git reset --hard HEAD~1           // return back in last commit and delet modifi
+
+git reset --soft HEAD~1           // return back into last commit and not delet 
+git reset --soft <source-commit>  // return in special source commit and not delet
+
+
+** tag **
+git tag         // show tag
+git tag v1.0    // add new tag
+git tag -a v1.1 -m "discription of tag"   // add new tag with description
+git tag -d v0.1        // delet tag v0.1 in locar
+
+git push origin v1.0   // push new tag in repo
+git push origin v1.0    // push deleted tag to github
+
+
+------- install apache & MySQL -----------
+
+apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+
+mysql_secure_installation
+	= if error run cond in mysql
+		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
+
+romve anonymous user 		-> yes
+login remootely 			-> no
+remove test database 		-> yes
+reloade privilege tables 	-> yes
+
+enter to mysql:
+	mysql -u root -p
+	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
+	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+	FLUSH PRIVILEGES
+
+update-rc.d apache2 disable/enable			// if start with system or not
+sudo systemctl disable apache2				//same as the top
+
+systemctl start apache2 mysql
+
+/etc/init.d/apache2 start			// start apache2 service

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta>: name="keyword, description, author, copyright", viewport(منفذ العرض);
+            centent(وصف المحتوى);
+            equiv="content-type"; 
+            charset="UTF-8";
+            http-equiv="refresh" content="30"
+    <base> (basw url for page)
+
+<body>: bgcolor=""; dir="";
+ background
+            -image:url()
+            -repeat: no-repeat
+            -size:cover or 100%
+            -attachment: fixed
+
+ readonly
+
+    </br>
+    attribute:
+        title
+details
+placeholder
+odd bdi
+    <label>
+    <h1><h2><h3><h4><h5><h6>: align;
+    <font>: face; color; size;
+    <p>: align; dir;
+    <pre>: (التحكم في المسافات)
+    <strong> (important and bold)
+       <b> bold
+    <mark>
+    <em>          ( emphasized text ,italic)
+       <i> italic
+    <del>
+        <strike> <s>        المشطوب
+    <ins> (inserted المدخلةunder line)
+       <u> (under line) كلمات بتنسيق مختلف مثل الاخطاء الاملائية
+    <sup> (super)
+    <sub> 
+    <small>
+        <big>
+    <center>
+    <tt> 
+    <blockquote>: cite      (الفقرات المقتبسة)
+    <q>(Defines a short quotation)       "" جملة قصيرة مثتبسة بين علامتي 
+    <abbr>    ATM للجمل المختصرة بحروف مثل 
+    <address>     information of somone italic text
+    <cite>       work title
+    <bdo> dir      لاعادة تنسيق اتجاه الكتابة مع استخدام الخاصية
+    <bdi> (Bi-Directional isolation.)
+    <cite> (title for a work)
+    <dfn>
+    <picture>
+    <param>
+    <wbr> (Word Break Opportunity)
+
+    ------------------
+    <button> onclick=""
+    <ol>: start; type="1;a;I;" reversed(inorder items)
+        <il>: start; type;
+    <ul>: type="cercle;square;";
+        <li>: type; 
+        
+     ------------------
+    <dl>  (description list)
+        <dt>: (title)
+        <dd>: (paragraphe)
+    style: list-style-type:
+    --------------------------
+    <a>: href=""; name; mailto: title  target="  
+                                            _self - Default. Opens in the same window/tab as it was clicked
+                                            _blank -  new window or tab
+                                            _parent - the parent frame
+                                            _top - full body of the window ";
+    <img>: src=""; height; width; border;
+           alt(view text when mouse); 
+           Vspace(came padding); Hspace(came padding);
+           usmape="#(name of map)"(تقسيم الصورة لروابط);
+    <map>: name;
+        <area>: shape="circle,rect,poly"; coords="x1,y1,x2,y2"; alt(نص يظهر عند مرور الماوس);
+
+    <picture>
+            <source media="(min-width: 650px, max-width:)" srcset=".jpg">
+            <source media="(min-width: 465px max-width:)" srcset=".jpg">
+    ------------------------------
+    <span>
+    <div>: align;
+    <hr>:(Horizontal rule) size; color; width; align; noshade;
+    <embed>: (media) src=""; height; widht; type;
+    <marque>: (شريط متحرك) bigcolor; height; widht; align;
+              behavior= scroll, slide, alternate;
+              direction= rtl, ltr;
+              loop= number, infiniti;
+              scrollamount;
+              scrolldelay;
+    ------------------------------      
+    <table>: dir; align; widht; height; bgcolor; background; cellspacing; cellpadding;
+            <colgroup>
+                    <col>  ( style for a columns)
+            <thead>
+            <tbody>
+            <tfoot>
+            <caption>: (title of table)
+            <th>: it is a header cell
+            <tr>:  valign=top, middle, bottome,;
+            <td>:  colspan(دمج خلية); rowspan(دمج صف);
+
+
+        style="border-spacing: 5px;
+                 border-collapse:"collapse"(just one border)  "
+     ---------------------------------------
+    <form>: action;
+             method="get, post"; 
+             enctype="text/plain"(الترميز);
+             autocomplet=
+             keygen  { يكون داخل form}
+             accept-charset  , novalidate ,  rel  ,  target
+        <fieldest>: dir
+            <legend>:dir
+
+    <input>: name; value; size; maxlength; height; widht; checked; placeholder;
+            type="text, password, hidden, radio, checkbox, submit, reset, button; textarea; file;"
+    
+    abbr
+    <select>:size; multiple; 
+        <optgroup>: 
+        <option>: selected; value; 
+    <textarea>: name; cols(width); rows(heigh); warp="soft,hard" readonly;
+    <button> type, onclick,(alert() show message)
+     ------------------------------------
+
+    
+    iframe (for open page web in same page)
+        src=   widht    height   title  name
+    
+---------------------- HTML 5 ------------------------------------
+
+<!doctype html>
+<heder>: dir  {رأس الصفحة}
+<article>:  {جسم الصفحة  }
+<section>:  {محتوى جانبي في الاخر } 
+<nav>:   { تنظيم الروابط menu}
+<aside>:   {قوائم جانبية }
+<footer>:    {اخر الصفحة}
+<figure>  ( self-contained content)
+    <figcaption>
+<main>
+<bdo> (Overrides the current text direction)
+
+-------
+
+<details>: open;   {اظهار تفاصيل}
+    <sammary> {عنوان التفاصيل}
+--------
+
+<code>  (math code)
+<kbd>  (keyboed short)
+<samp>  (system or programm output)
+<var>   (variable of programme or math)
+<dialog>: open
+<progress>: max; value;
+<time>: datetime;
+<figure>
+    <img>{the image}
+    <figcaption>{ the title of image}
+-------
+<audio>: controls="controls"; src; loop; autoplay="true,false"; hidden; perload(for download);
+<vedio>: controls; src; loop; autoplay , muted; hidden; preload(for download); height; width; poster(صورة ابتدائية);
+    <source>:(تعريف المسار) src; type="(vedio/mp4مثال)";
+
+<track> (pecifies text tracks for <audio> or <video> elements.)
+
+--------------------------------
+<canvas>:(java scriptللرسم عن طريق) height; width;
+<svg>: height; width;
+    <circle />: cx sy r style="css code";
+    <rect />: height width; 
+    <polygon /> points="x,y x,y x,y x,y x,y"
+         style="fill:{color} stroke:{color border} stroke-width:{border think}" 
+         strock-fill:{width border} fill-rule:evenod{color center};
+    <text>: fill(color); x; y; 
+------------------------------
+    <defs>: ()
+        <linearGradient>:
+            <stop />: offset style="stop-color: ;stop-opacity: ;"
+------------------------------
+ 
+<output>
+<input> disabled , max , maxlength , min , pattern(specifies the caracter) ,  
+        required(forc input) , size , step , value , autofocus , autocomplet
+        readonly , multiple , placeholder , formaction , form , formenctype(للتشفير)
+        formmethod , formtarget , onfocus(عند الادخال) , onblur(عند ترك الادخال)
+    <type>:
+        list 
+        <detalist>{ select يشبه الوسم}
+            <option value="">
+        reset
+        color:value{القيمة الافتراضية}
+        date:
+        datetime:
+        month:
+        email:
+        number:  max; min; value; step; required;
+        range: (slider control)  max; min; value; step; required;
+        search:
+        tel:
+        time:
+        url:
+        wek:
+------------------------
+<meter>  (scalar measurement within a known range)
+<object> {Defines a container 
+<embed>       for an external application   }
+
+(youtube vedio) 
+    <iframe widhth height src="youtube.com/embeed+URL+(?autoplay&mute&loop&controls)(playlist, ,)">
+<noscript>
+
+<ruby>  
+    <rp> , <rt>
+    
+    
+============== HTML 5 =============
+ 
+ <!doctype html>
+<heder>: dir  {رأس الصفحة}
+<article>:  {جسم الصفحة  }
+<section>:  {جسم الصفحة  } 
+<nav>:   { تنظيم الروابط menu}
+<aside>:   {قوائم جانبية }
+<footer>:    {اخر الصفحة}
+-------
+<details>: open;   {اظهار تفاصيل}
+    <sammary> {عنوان التفاصيل}
+--------
+<dialog>: open
+<progress>: max; value;
+<time>: datetime;
+<figure>
+    <img>{the image}
+    <figcaption>{ the title of image}
+-------
+<audio>: controls="controls"; src; loop; autoplay="true,false"; hidden; perload(for download);
+<vedio>: controls; src; loop; autoplay; hidden; preload(for download); height; width; poster(صورة ابتدائية);
+    <source>:(تعريف المسار) src; type="(vedio/mp4مثال)";
+--------------------------------
+<canvas>:(java scriptللرسم عن طريق) height; width;
+<svg>: height; width;
+    <circle />: cx sy r style="css code";
+    <rect />: height width; 
+    <polygon /> points="x,y x,y x,y x,y x,y"
+         style="fill:{color} stroke:{color border} stroke-width:{border think}" 
+         strock-fill:{width border} fill-rule:evenod{color center};
+    <text>: fill(color); x; y; 
+------------------------------
+    <defs>: 
+        <linearGradient>:
+            <stop />: offset style="stop-color: ;stop-opacity: ;"
+------------------------------
+<input>
+    <detalist>{ select يشبه الوسم}
+        <option>: value;
+    <keygen>{ يكون داخل form}
+    <output>
+<input>
+    color:value{القيمة الافتراضية}
+    date:
+    datetime:
+    month:
+    email:
+    number:max; min; value; step; required;
+    range:max; min; value; step; required;
+    search:
+    tel:
+    time:
+    url:
+    wek:
+------------------------
+
+
+
+
+

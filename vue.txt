@@ -1,0 +1,36 @@
+
+
+<p>hello {{name}} </p>
+<p>hello: {{ saySomething()}} </p>
+<p v-text="name"></p>
+<ul>
+	<li v-for="elem in skills">elem</li>
+</ul>
+
+*attribute HTML:
+	v-text="",			// set text content
+	v-html="",			// set html content
+	v-for="elem in skills",				//set loop for the element 
+		v-for="(skill, index) in skills",				//set loop for the element 
+	
+
+
+
+
+var vm = new Vue({
+	el: '#select-div',
+	data: {						// put all data value in this object
+		name: 'abdou',
+		age: 43,
+		skills: ['html', 'css', 'vue,js'],
+	
+	},
+	methods: {
+		saySomething: function(){
+			return "hello from vue.js";
+		}
+	}
+
+})
+
+

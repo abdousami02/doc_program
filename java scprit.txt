@@ -1,0 +1,1530 @@
+
+document.getElementById("")
+            .innerHTML=
+            document.write()  (only be used for testing.)
+            window.alert()
+            window.print()"for print a document"
+            console.log()
+
+
+element.setProperty('prop', 'val')
+
+patern="^((?=.*\d)(?=.*[^0-9]).{8,32})" 	// patern for password
+
+------------keyword JavaScript------------------
+
+   break	       Terminates a switch or a loop
+   continue	   Jumps out of a loop and starts at the top
+   debugger	    Stops the execution of JavaScript, and calls (if available) the debugging function
+   do ... while	Executes a block of statements, and repeats the block, while a condition is true
+   for	            Marks a block of statements to be executed, as long as a condition is true
+   function	    Declares a function
+   if ... else	     Marks a block of statements to be executed, depending on a condition
+   return	         Exits a function
+   switch          	Marks a block of statements to be executed, depending on different cases
+   try ... catch	Implements error handling to a block of statements
+   var	             Declares a variable
+   let              declare a variable in a block of codes and out is indefind
+   const            behave like let variables, except they cannot be reassigned:
+
+-----------HTML Events--------------
+
+   onchange	An HTML element has been changed
+   onclick	        The user clicks an HTML element
+   onmouseover	The user moves the mouse over an HTML element
+   onmouseout	The user moves the mouse away from an HTML element
+   onkeydown	The user pushes a keyboard key
+   onload	        The browser has finished loading the page
+   onunload
+   onmousedown
+   onmouseup
+   mousemove
+
+--------------string method--------------------
+
+   var = `string    ${}variable     `
+
+   var[x]        show character number in index x 
+   var.length   (namber of later in sentence)
+
+   var.charAt(x)               extracting characters in position x
+   var.charCodeAt(x)          extracting characters in position x
+       var[0]                  extracting characters in position 0
+
+   var.trim()                removes whitespace from both sides of a string
+   var.toUpperCase()
+   var.toLowerCase()
+   str = var.concat("")            joins two or more strings:
+
+   var.slice(start, end)     extracts a part of a string    not inclouding the end
+   var.slice(start)           extracts the star and all the rest
+   var.substring(start, end)   same as slice and not include negative value and returned 0
+   var.substr(start, length)  the second parameter specifies the length of the extracted part.
+
+   var.repeat(x)        repeat the var string x times
+   var.indexOf("char",y)  search position of char in text string     star from position y
+   var.lastIndexOf("x",y)  search position of x        after number y
+
+   var.includes("a",x)    if the var include the string "a" in position x and return true or false
+   var.startwith("a",x)   if the var start with "a" in postion x
+   var.endwith("a",x)     if the var end with "a" in length x of var (not include the position x)
+
+   var.split(separator, limit)      (converted to an array with the) limit of array
+         separator = ""       //split every characters 
+                   = ","         // Split on commas
+                   = " "          // Split on spaces
+                   = "|"           // Split on pipe
+
+   var.replace("Microsoft", "W3Schools");     replaces a specified value with another value in a string:
+               /Microsoft/i     insensitive for UpperCase or LowerCase
+               /Microsoft/g     replace all value in the string
+
+------ RegExp --------
+
+   .search("")          searching whith out the powerful the value return the position
+           or /  /i     insensitive for UpperCase or LowerCase
+           /\bWORD/     find position of word begin whithe WORD
+           /WORD\b/     find position of word end whithe WORD
+
+
+
+
+
+   .match( char )       search for the char and return array 
+           /  /i     	Perform case-insensitive matching
+           /  /g        Perform a global matching to the end
+           /  /m        Perform multiline matching
+
+           /[abc]/g	Find any of the characters between the brackets	
+           /[0-9]/g	Find any of the digits between the brackets	
+           /(x|y)/g	Find any of the alternatives separated with 
+           /\uxxxx/g	Find the Unicode character specified by the hexadecimal number xxxx
+           /[^0-9]/g  Find all is not in range 0-9
+
+           n+	  define quantities, Matches any string that contains at least one n
+           n{2}  define quantities, Matches any string that contains 2 n
+           n{2,}  define quantities, Matches any string that contains 2 n or more
+           n{2,5}  define quantities, Matches any string that contains 2 n or 5 n
+           n*	  define quantities, Matches any string that contains zero or more occurrences of n
+           n?	  define quantities, Matches any string that contains zero or one occurrences of n
+
+      /  /.test("string")    It searches a string for a pattern, and returns true or false, depending on the result
+      /  /.exec("string")    It searches a string for a specified pattern, and returns the found text as an object.
+                        { var str = "Is this all there is ?";
+                          var patt1 = /is/g;
+                          var result = patt1.exec(str);
+                          document.write( result.index);
+                        }
+
+----------------number method---------------------
+ 
+       to convert the base of number and conver it to string type
+         num.toString()
+         num.toString(10);  // returns 32
+         num.toString(32);  // returns 10
+         num.toString(16);  // returns 20
+         num.toString(8);   // returns 40
+         num.toString(2);   // returns 100000
+
+   .toExponential(x)         make the number on formate:  4.4 x 10^x
+   .toFixed(x)               how number show befor comma
+   .toPrecision()            show all number
+   .valueOf()                mak the number object to number value
+
+   .Number()	      Returns a number, converted from its argument. not "10 years " or "10 4" or "3,5"
+   .parseFloat()	      Only the first number is returned:  (the best)
+   .parseInt()	  Only the first number is returned, not "10.5"
+
+   Math.max(n1, n2, ... )   _VALUE	Returns the largest number possible in JavaScript
+   Math.min(n1, n2, ... )   _VALUE	Returns the smallest number possible in JavaScript
+   .POSITIVE_INFINITY	Represents infinity (returned on overflow)
+   .EGATIVE_INFINITY	Represents negative infinity (returned on overflow)
+   .NaN	Represents a "Not-a-Number" value
+
+   .isNaN()   to find out if a value is a number or not
+   .isInteger()
+
+------------------Math Object Methods--------------------
+
+   acos(x)	Returns the arccosine of x, in radians
+   asin(x)	Returns the arcsine of x, in radians
+   atan(x)	Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians
+   atan2(y, x)	Returns the arctangent of the quotient of its arguments
+   cos(x)	Returns the cosine of x (x is in radians)
+   exp(x)	Returns the value of Ex
+   log(x)	Returns the natural logarithm (base E) of x
+
+
+   Math.abs(x)           returns the absolute (positive) value of x    // eg: (-4) = 4 ; (4) = 4
+   Math.round(x)	Returns the value of x rounded to its nearest integer  // eg: 2.2 = 2 ; 2.8 = 3
+   Math.ceil(x)	        Returns the value of x rounded up to its nearest integer  /eg: 2.2 = 3 ; 2.8 = 3
+   Math.floor(x)	        Returns the value of x rounded down to its nearest integer  /eg: 2.2 = 2 ; 2.8 = 2
+   Math.trunc()     return the integer number (delet all number after comma) /eg: 2.2 = 2 , 2.8 = 2
+
+   Math.max(x, y, z, ..., n)	Returns the number with the highest value
+   Math.min(x, y, z, ..., n)	Returns the number with the lowest value
+   Math.pow(x, y)	Returns the value of x to the power of y
+   X ** y       Returns the X power of y
+   Math.random()	   Returns a random number between 0 and 1
+
+
+   sin(x)	Returns the sine of x (x is in radians) |
+   sqrt(x)	Returns the square root of x            |  Angle in radians = Angle in degrees x * PI / 180.
+   tan(x)	Returns the tangent of an angle
+   math.pow(x,number)
+
+-------------array method (var=name array)-------------------
+
+   var freinds = new Array("element1", "element2", "element3")
+   var freinds =  ["element1", "element2", "element3"];
+
+   var-arr.length     returns the length of an array (the number of array elements).
+
+   var-arr.forEach(elem, index, array)  looping and add a function
+   mySet.foEach((elem1, elem2)) => {}   // elem1 === elem2
+
+   Type of Array
+           Array.isArray(var)                  type of variable array
+           var-arr.constructor === Array;
+           var-arr.constructor.toString().indexOf("Array") > -1;
+
+                           
+   .toString()     converts an array to a string of (comma separated) array values.
+   .toLocaleString
+   .join("*")       behaves just like toString(), but in addition you can specify the separator:
+
+   .includes("a",x)    if the element "a" is in the array and star from position x and return true or false
+   .push("")       adds a new element to an array (at the end): and returns the new array length:
+   .unshift("");      adds a new element to an array (at the beginning), and returns the new array length.
+
+   .splice(n1,n2, "" ,"" );   add item. n1=position, n2= elements should be removed.
+
+   .pop()        removes the last element from an array: and returns the value that was "popped out":
+   .shift();        removes the first array element and "shifts" all other elements to a lower index. and returns the string that was "shifted out":
+   delete var[n];         delet an element
+
+   .slice(x,y)   slice elements star index x and finish in y ,    and don't modifi the array
+   .slice(x)     slice elements star index x and finish in the last index    don't modifi the array
+
+   .concat(var2,var4)     creates a new array by merging (concatenating) existing arrays:  // var3 = var1.concat()
+   .concat(["x" , "y" , "z" , "a"])                                                        // var3 = var1.concat()
+
+   .indexOf(value, start)       searches an array for an element value and returns its position.  returns -1 if the item is not found.     //var2 = var1.indexOf()
+   .lastIndexOf(value, star(jump) )         is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.     //var2 = var1.indexOf()
+   ceil
+
+   .reverse    reverses the elements in an array. ينعكس
+   .sort()     sorts an array alphabetically
+   .sort(function(a, b){return a - b});          sort number as the min to max
+                   var[0] it is the max value or var[0] it is the min value
+                  
+   var.sort(function(a, b){return 0.5 - Math.random()});     Sorting an Array in Random Order
+
+
+------ Methods in Array--------
+   -search the max and min value:
+        *function name(arr) {
+              return Math.max.apply(null, arr);}
+        *function name(arr) {
+               return Math.min.apply(null, arr);}
+
+        *function name(arr) {
+                var len = arr.length;
+                var max = -Infinity;
+                  while (len--) {
+                  if (arr[len] > max) {max = arr[len];}
+                    }
+                return max;}
+
+        *function name(arr) {
+                var len = arr.length;
+                var min = Infinity;
+                  while (len--) {
+                  if (arr[len] < max) {max = arr[len];}
+                    }
+                return min;}
+
+   sort object array:
+      *number   function name-fanc() {
+               var-arr.sort(function(a, b){return a.year - b.year});
+
+      *alfabet    function name-fanc() {
+                var-arr.sort(function(a, b){
+                var x = a.type.toLowerCase();
+                var y = b.type.toLowerCase();
+                if (x < y) {return -1;}
+                if (x > y) {return 1;}
+                return 0;
+                });
+
+   .forEach(myFunction)        calls a function (a callback function) once for each array element.
+           function myFunction(value, index, array) {  }
+
+
+
+   var2 = var1.map(myFunction)       method creates a new array by performing a function on each array element.
+          function myFunction(value, index, array) { returne value + 2 }
+
+        
+   var2 = var1.filter(myFunction)      creates a new array with array elements that passes a test
+          function myFunction(value, index, array) {returne value > 10 }
+
+   var2 = var1.reduce(myFunction,"value initial")      runs a function on each array element to produce (reduce it to) a single value.
+          function myFunction(total, value, index, array) {return total+value;  }
+
+   reduceRight()     works from right-to-left in the array. See also reduce().
+
+   var2 = var1.every(myFunction)      check if all array values pass a test.
+          function myFunction(value, index, array) {return value > 10;  }
+
+   var2 = var1.some(myFunction)      check if some array values pass a test.
+          function myFunction(value, index, array) {return value > 10;  }
+
+
+
+   var2 = var1.find(myFunction)      returns the value of the first array element that passes a test function.
+                function myFunction(value, index, array) {return value > 18;  }
+
+   var2 = var1.findIndex(myFunction)      returns the index of the first array element that passes a test function.
+                function myFunction(value, index, array) {return value > 18;  }
+
+-----------destructuturing-------------
+
+****** Object *********
+let user{ name: 'abdou', age: '24', langues:{ html: 60%, css: 70%}}
+
+const { name: username , age: userage , langues : { html , css , phython = 'dufalt' } } = user;
+
+
+******  Array **********
+let food = ['Burger', 'Pizza', 'Chicken', [Orange, Banan], 'Rize' , 'Meat', 'chorba']
+
+const [ one, , three, four,[ f1, f2 , f3='dufault'] , ...otherFood  ] = food;
+
+
+**********
+
+var book = "video",    // swap the value of variable
+    video = "book";    // book = "book", and video = "video"
+
+[book, video] = [video, book]  // swap bewin the variable
+
+
+***** function ******
+let user{ name: 'abdou', age: '24', langues:{ html: 60%, css: 70%}}
+
+function showInfo({name , age , langues : { html , css , phython = 'dufalt'} }){
+   
+console.log(`my name is ${name} and I have ${24} years, my skills in html ${html} `)
+}
+showInfo(user)
+-----------------------------------
+
+const myVar = "key";   // add the value of variable as a propertie in object
+const myObject = {
+   prop1: 'myValue',
+   [myVar]: 'value'
+}
+
+******* Set() **********
+let myArray = [1, 2, 3, 3, 4, 4, 2]
+let myBook = new Set(myArray);  // it is Object, can't accesse the index and don't repeat the value
+                                 // the Set() accept only iterabl value(the value can be looped)
+
+myBook
+myBook.add('abdou'); // add value 
+myBook.size
+myBook.delete('');
+myBool.cleat()
+myBook.has('')
+myBook.keys()
+
+
+  ======== Set vs WeakSet =============
+
+  Set
+  - Contain Any Type Of Values
+  - Get Elements Count With .size
+  - forEach Available To Iterate
+  - You can Get Its Keys
+
+  WeakSet
+  - Contains Only Object Or Array
+  - You Can't Use Size To Get Elements Count
+  - forEach Not Available To Iterate
+  - You Cant Get Keys
+
+
+****** Map() **********
+
+let myMap = new Map([  [20, 'abou'], ["20", 'oussam']  ]); // the Map accept number key and not conver it to string
+
+myMap.set(false, "boulean");   // can accept all type of data as a key
+myMap.set({a: 44}, "object");
+myMap.set(function(){}, "function")
+
+myMap.get(false);  // get the value of key (false) show "boulean"
+myMap.get(20);     // get the value of key (20)  show "abou"
+myMap.get("20")    // get the value of key "20" show "oussama"
+
+myMap.size
+myMap.delet(false) // delet the key false
+myMap.has(20)      // check if the key 20 is her
+myMap.clear()      // clear All data in myMap
+
+
+  ========= Map vs WeakMap =============
+
+  Map
+  - Contain Any Type Of Values
+  - Get Elements Count With .size
+  - forEach Available To Iterate
+  - You can Get Its Keys
+
+  WeakMap
+  - Contains Only Object Or Array
+  - You Can't Use Size To Get Elements Count
+  - forEach Not Available To Iterate
+  - You Cant Get Keys
+
+--------- Symbol --------------
+let mySymbol = Symbol();
+let myObj = {
+   userName: "abdou",
+   [mySymbol]: "hidden Data"
+  }
+      for (let val of Object.entries(myObj) ){
+         console.log(val);                    // don't show mySymbol
+      }
+   console.log(Object.getOwnPropertyNames(myObj));  // don't show mySymbol
+   console.log(Object.Keys(myObj));             // don't show mySymbol
+   console.log(JSON.stringify(myObj));           // don't show mySymbol
+   console.log(getOwnPropertySymbos(myObject));  // show mysymbol
+   console.log(myObj)                           // show mySymbol
+
+----------------------date and time---------------------------
+
+   new Date()                                            |
+   new Date(year, month, day, hours, minutes, seconds)   | ex outpute: Sat Jul 10 2021 18:37:16 GMT+0100 (British Summer Time)
+   new Date(milliseconds)                                |
+   new Date(date string)  "October 13, 2014 11:13:00"  or ("2015-03-25T12:00:00Z") |
+   new Date(20/10/1998)
+
+   .toUTCString()   ex: Sat, 10 Jul 2021 17:35:34 GMT
+   .toDateString()   ex: Sat Jul 10 2021
+   .toTimeString()   ex: 21:03:01 GTM+01:00 ()
+   .toISOString()    ex: 2021-08-17T18:01:06.198Z
+
+   Date.parse(x)   conver to milliseconds must be enter value x not full
+   Date.now()      conver to milliseconds is full
+
+   Type of date
+   *       function isDate(myDate) {
+           return myDate.constructor.toString().indexOf("Date") > -1;
+           }
+
+   *       function isDate(myDate) {
+           return myDate.constructor === Date;
+           }
+   indexOf
+
+   getFullYear()	Get the year as a four digit number (yyyy)
+   getMonth()	Get the month as a number (0-11)
+   getDate()	Get the day as a number (1-31)
+   getHours()	Get the hour (0-23)
+   getMinutes()	Get the minute (0-59)
+   getSeconds()	Get the second (0-59)
+   getMilliseconds()	Get the millisecond (0-999)
+   getTime()	Get the time (milliseconds since January 1, 1970)
+   getDay()	Get the weekday as a number (0-6)
+   getTimezoneoffset()   get def between UTC and your local time in minutes
+
+   All in above when you make:
+   getUTCDate()   get the date in UTC Time
+
+
+   setFullYear()  Set the year (optionally month and day)
+   setMonth()  Set the month (0-11)
+   setDate()	Set the day as a number (1-31)
+   setHours()	Set the hour (0-23) (optinally minuts and secend)
+   setMilliseconds()	Set the milliseconds (0-999)
+   setMinutes()	Set the minutes (0-59)
+
+   setSeconds()	Set the seconds (0-59)
+   setTime()	Set the time (milliseconds since January 1, 1970)
+
+--------------object--------------------
+   test if this an object
+        if (typeof myObj !== "undefined" && myObj !== null)      true
+        if (myObj !== null && typeof myObj !== "undefined")      false
+        
+myObject1 = new Object;           // creat new object withe "new" keyword.
+   myObject.prop1 = "value1";
+   myObject.prop2 = "value2";
+
+myObject2 = {                     //creat new object
+   myObject.prop1 = "value1";
+   myObject.prop2 = "value2";
+}
+
+otherObject1 = object.creat(myObject1);    // creat otherObject and inheret propertieas for myObject
+
+otherObject2 = objece.assign({}, myObject1, myObject2)  // creat otherObject and inheret properties from myObject1 and 2.
+ 
+Object.assign(target, myObject1, myObject2, {prop3 = "value3"})   // copie the properties form myObject1 and 2 to target.
+
+frezObject = object.freeze({prop1: "value1"});  //creat a new Object freezed
+
+for (let info in myObject){
+   console.log( info, myObject[info] )  // show all prop(info) and value(myObject[info]) in the Object.
+}
+
+Object.getOwnPropertyNames(myObject)
+
+delete Object.property;   // delet properties of an Object
+
+
+Object.defineProperty(myObject, "prop1", {    // by defulte if you don't write the propery description it is false
+                                                and the defulte of normal property is true
+   writable: false,    // can't modefie of this property and can delete
+   enumerable: false,   // can't be loop in property of this Object
+   configurable: false,  // can't delete or change value of configuration of property " writable or enumerable"
+   value: "value1"  
+});
+
+Object.keys(myObject)  // the property can be looping
+
+Object.defineProperties(myObject, {
+   prop1 {
+   writable: true,
+   enumerable: false,
+   configurable: true,
+   value: "value1"
+   },
+   prop2 {
+   writable: true,
+   enumerable: false,
+   configurable: true,
+   value: "value2"
+   },
+   prop3 {
+   writable: true,
+   enumerable: false,
+   configurable: true,
+   value: "value3"
+   }
+})
+
+----------Symbol -----------
+
+let mySymbol = Symbol("descreption");  // Symbole is unique not repeated
+      let mySymbolOne = Symbol("test")
+      let mySymbolTwo = Symbol("test")    // creat two symbol not equale for each other 
+
+Symbol.for("desc") // check if Symbol contain description ("desc") if exist select and is not creat new
+    let mySymbolOne = Symbol.for("test")
+    let mySymbolTwo = Symbol.for("test")
+
+    console.log(mySymbolOne === mySymbolTwo) //  true 
+
+Symbol.keyFor(mySymbolOne) , // get the key (desc) for mySymbolOne
+
+mySymbolOne.description  // get the descreption (key) of mySymbolOne
+
+Symbol.iterator //
+
+-----------destructuturing-------------
+
+
+--------------------------
+myObjc instanceof mainObject(constractor Object)  // if the myObject is created from mainObject.
+
+myObjc.constructor === minObject  // if myObject is created from mainObject.
+
+
+   // constructor function
+
+     function phone(ser, col, pric ) {
+        this.serial = ser;
+        this.color = col;
+        this.price = pric;
+     }
+   let phone1 = new phone("ser1", "col1", "pric1")
+
+--------------Classe-----------------
+// Use the keyword class to create a class, and always add the constructor() method.
+// The constructor method is called each time the class object is initialized.
+   [
+        class Car {
+        constructor(brand) {
+        this.carname = brand;
+        }
+        present(x) {
+        return x + ", I have a " + this.carname;
+        }
+         static hello(x) {
+         return "Hello " + x.carname;
+         }
+        }
+
+        mycar = new Car("Ford");
+        document.getElementById("demo").innerHTML = mycar.present("Hello");
+    ]
+
+* inheritance
+    [
+        class Car {
+        constructor(brand) {
+        this.carname = brand;
+        }
+        present() {
+        return 'I have a ' + this.carname;
+        }
+        }
+
+        class Model extends Car {
+        constructor(brand, mod) {
+        super(brand);
+        this.model = mod;
+        }
+        show() {
+        return this.present() + ', it is a ' + this.model;
+        }
+        }
+
+        mycar = new Model("Ford", "Mustang");
+        document.getElementById("demo").innerHTML = mycar.show();
+
+-------------function---------------------
+
+
+ function sayHello(name, age= "unknown"){
+ if(age === undifined){ age = "Unknown"}
+ age = age || "Unknown" ;
+
+ console.log(`Hello ${name} your Age is ${age}`);
+ }
+sayHello("sami");
+
+
+function calc(...numbers){              //this if the parameter is many and unknown
+   console.log(Array.isArray(numbers));
+   let resutle = 0;
+   for(i = 0; i < numbers.length; i++){
+      resulte += numbers[i];
+   }
+}
+
+
+----------------------
+function myFunction(a, b, c) {
+  return arguments.length;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3,7);
+
+
+*******
+  function say(){
+     return 10;
+  }
+
+******  the same
+ 
+  say = () => 10 ;
+********
+ 
+
+*********
+
+  function say(num1, num2){
+   return num1 + num2;
+   }
+******* the same
+
+ say = (num1, num2) => num1 + num2 ;
+
+*********
+
+
+*************
+  function say(num1, num2){
+   let a = num1 + num2;
+   a = a / 2;
+   console.log(a)
+   }
+
+******** the same 
+   say = (num1, num2) => {
+   let a = num1 + num2;
+   a = a / 2;
+   console.log(a)
+   }
+***************
+
+
+ ---------A Proper Random Function----------
+
+
+        function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+        }
+    ]
+
+* Getters and Setters
+
+[
+        var obj = {counter : 0};
+
+                   // Define Setters and Getters
+        Object.defineProperty(obj, "reset", {
+          get : function () {this.counter = 0;}
+        });
+        
+        Object.defineProperty(obj, "add", {
+          set : function (value) {this.counter += value;}
+        });
+        
+
+                     // Play with counter:
+        obj.reset;
+        obj.add = 5;
+
+
+]
+    [
+        class Car {
+        constructor(brand) {
+        this._carname = brand;
+        }
+        get carname() {
+        return this._carname;
+        }
+        set carname(x) {
+        this._carname = x;
+        }
+        }
+
+        mycar = new Car("Ford");
+        mycar.carname = "Volvo";
+        document.getElementById("demo").innerHTML = mycar.carname;
+    ]
+
+------------------Object Constructors---------------
+
+      // Constructor function for Person objects
+function Person(firstName,lastName,age,eyeColor) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.eyeColor = eyeColor;
+  this.changeName = function (name) {
+    this.lastName = name;
+  }
+}for
+     // Create a Person object
+var myMother = new Person("Sally","Rally",48,"green");
+
+      // Change last name
+myMother.changeName("Doe");
+
+Person.prototype.nationality = "English";  //add a new property "nationality" to a constructor
+
+      // Display last name
+document.getElementById("demo").innerHTML =
+"My mother's last name is " + myMother.lastName;
+
+----------------------
+* // Adding or changing an object property
+Object.defineProperty(object, property, descriptor)
+
+// Adding or changing many object properties
+Object.defineProperties(object, descriptors)
+
+// Accessing Properties
+Object.getOwnPropertyDescriptor(object, property)
+
+// Returns all properties as an array show all
+Object.getOwnPropertyNames(object)
+
+// Returns enumerable properties as an array
+Object.keys(object)
+
+// Accessing the prototype
+Object.getPrototypeOf(object)
+
+// Prevents adding properties to an object
+Object.preventExtensions(object)
+// Returns true if properties can be added to an object
+Object.isExtensible(object)
+
+// Prevents changes of object properties (not values)
+Object.seal(object)
+// Returns true if object is sealed
+Object.isSealed(object)
+
+// Prevents any changes to an object
+Object.freeze(object)
+// Returns true if object is frozen
+Object.isFrozen(object)
+--------------The Function() Constructor---------------------
+
+var myFunction = new Function("a", "b", "return a * b");
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+-------------Fanction call self-invoking------------
+(function () {
+  document.getElementById("demo").innerHTML = "Hello! I called myself";
+})();
+
+------------Arguments Object in fanction
+function findMax() {
+  var i;
+  var max = -Infinity;
+  for(i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+} 
+document.getElementById("demo").innerHTML = findMax(84, 5, 6, 77);
+
+---------------------
+==	equal to
+===	equal value and equal type
+!=	not equal
+!==	not equal value or not equal type
+>	greater than
+<	less than
+>=	greater than or equal to
+<=	less than or equal to
+?	ternary operator
+
+&&	logical and
+||	logical or
+!	logical not
+
+&&	and	
+||	or		
+!	not	
+
+||  console.log( ` ${var || x} `)     // show var if var is not false value else show x
+??  console.log( ` ${var ?? x} `)     //show var if var is not null or undefined else show x
+
+---------------Bitwise Operations------------------
+
+&	AND	Sets each bit to 1 if both bits are 1
+|	OR	Sets each bit to 1 if one of two bits is 1
+^	XOR	Sets each bit to 1 if only one of two bits is 1
+~	NOT	Inverts all the bits
+<<	Zero fill left shift	Shifts left by pushing zeros in from the right and let the leftmost bits fall off
+>>	Signed right shift	Shifts right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+>>>	Zero fill right shift	Shifts right by pushing zeros in from the left, and let the rightmost bits fall off
+
+-------------------------------
+
+*if statment         // if condition
+        if (time < 10) {
+                greeting = "Good morning";
+        } else if (time < 20) {
+                greeting = "Good day";
+        } else {
+                greeting = "Good evening";
+        }
+
+*if               // if ternary condition
+      condition ? (do this if true) : (do this if fals)
+
+      condition 
+      ? (do this if true)
+      : (else condition 2 )
+      ? (do this if condition 2 is true )
+      : (else condition 3)
+      ? (do this if condition 3 is true)
+      : (else do this if any one is don't true)
+
+
+
+*switch statment        "Switch cases use strict comparison (===)."
+        switch(expression) {
+        case x:
+                // code block
+        break;
+        case y:
+                // code block
+        break;
+        default:  "specifies the code to run if there is no case match:"
+                // code block
+        }
+
+*for 
+        var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        var i;
+        for (i = 0; i < cars.length; i++) {
+         document.write(cars[i] + "<br >");
+        }
+- break          "jumps out" of a loop.
+- continue       "skip" skip this next code for this once.
+- label         select the loop for jump or skip.
+
+*for (contain label)
+
+         var cars = ["BMW", "Volvo", "Saab", "Ford"];
+        var color = ["red" , "blue" , "black"];
+
+        mainloop: for (let i = 0; i < cars.length; i++) {
+         console.log( cars[i]);
+            nestedloop: for (let j = 0 ; j < color.length ; j++){
+                console.log("-" +color[j]);
+               if( color[j] == "blue"){
+                  break 
+               }
+
+            }
+         }
+
+*for/of  
+        var cars = ['BMW', 'Volvo', 'Mini'];
+        var x;
+
+        for (x of cars) {
+        document.write(x + "<br >");
+        }
+
+*for/in
+        var person = {fname:"John", lname:"Doe", age:25}; 
+        var x;
+        for (x in person) {
+        document.write(person[x] + " ");
+        }
+
+*while 
+        var text = "";
+        var i = 0;
+        while (i < 10) {
+        text += "<br>The number is " + i;
+        i++;
+        }
+
+*do while
+        var text = "";
+        var i = 0;
+        do{
+        text += "<br>The number is " + i;
+        i++;
+        }
+        will(i < 10 )
+
+---------------------------------------
+
+
+typeof          The data type of NaN is number
+                The data type of an array is object
+                The data type of a date is object
+                The data type of null is object
+
+constructor     property returns the constructor function for all JavaScript variables.
+
+setInterval( function, time);                   // run function every time
+setTimeOut(function , time);                    // run function after thsi time
+
+------------------Errors--------------
+   try           lets you test a block of code for errors.
+   catch         lets you handle the error.
+   throw        lets you create custom errors.
+   finally        lets you execute code, after try and catch, regardless of the result.
+
+        try {
+        Block of code to try
+        }
+        catch(err) {
+        Block of code to handle errors
+        }
+        finally {
+        Block of code to be executed regardless of the try / catch result
+        }
+
+--------------HTML Form------------------
+
+*above in form :     onsubmit="return validateForm()"
+        function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+        alert("Name must be filled out");
+        return false;
+        }
+        }
+
+checkValidity()	         Returns true if an input element contains valid data.
+setCustomValidity()	Sets the validationMessage property of an input element.
+
+validity	        Contains boolean properties related to the validity of an input element.
+validationMessage	Contains the message a browser will display when the validity is false.
+willValidate	        Indicates if an input element will be validated.
+
+customError	Set to true, if a custom validity message is set.
+patternMismatch	Set to true, if an element's value does not match its pattern attribute.
+rangeOverflow	Set to true, if an element's value is greater than its max attribute.
+rangeUnderflow	Set to true, if an element's value is less than its min attribute.
+stepMismatch	Set to true, if an element's value is invalid per its step attribute.
+tooLong	        Set to true, if an element's value exceeds its maxLength attribute.
+typeMismatch	Set to true, if an element's value is invalid per its type attribute.
+valueMissing	Set to true, if an element (with a required attribute) has no value.
+valid         	Set to true, if an element's value is valid.
+
+
+
+------------------- HTML DOM----------------------
+   .textContent
+   .remove()
+   * Finding HTML elements:
+        document.getElementById(id)	        Find an element by element id
+        document.getElementsByTagName(name)	Find elements by tag name
+        document.getElementsByClassName(name)	Find elements by class name
+        document.querySelector('')              CSS Selectors
+        document.querySelectorAll('')[n]
+                .length
+                element[]
+
+        document.title          // give the title of document
+        document.images
+        document.forms[id]                       Finding elements by HTML Object Collections
+        document.body
+        document.links           the <a> tage contain link attribuit
+        document.anchors         the <a> tage not contain link attribuit
+       
+
+   * changing HTML content:
+        element.innerHTML =  new html content     Change the inner HTML of an element
+               .outerHTML
+               
+        element.innerText
+               .outerText
+               .textContent
+
+        element.attr = new value        Change the attribute value of an HTML element
+        element.setAttribute(attr, value)    Change the attribute value of an HTML element     
+        element.getAttribute(attr)
+        element.hasAttribute(attr)
+        element.removeAttribute(attr)
+
+        element.dataset.'attr'          // get or set the data attribuit fo html
+
+        element.contains(autherelemen)    // if the element is contain auther element
+
+        element.classList
+        element.classList.contains(class1)    // if element contains calsse1 
+        element.classList.item(num)           // show calsse number (num) on element
+        element.classList.add()
+        element.classList.remove()
+        element.classList.toggle()    // if it is exist remove if not he add
+
+        
+   * changing style:
+         element.style.property = new style     Change the style of an HTML element
+         document.getElementById(id).style.color = 'red'
+
+   * adding or delet HTML element:
+        document.createElement(element)       Create an HTML element
+        document.createTextNode()     To add text 
+        document.createComment
+        document.createAttribute()
+        myAttr.value = 'value'
+        element.setAttributeNode(attr)    add the attribut(attr) in the element don't addd the value   
+
+        document.removeChild(element)      Remove an HTML element
+        document.body.appendChild(element)      Add an HTML element
+        document.replaceChild(new, old)     Replace an HTML element
+
+        x.appendChild(y)                      append element y  into element x in the last
+        x.insertBefore(new, elem)             append element y  into element x in the begin
+        x.remove()                            remove an HTML element
+        parent0.removeChild(child0);          in "parent0" element:  remove element "chils0" 
+        parent.replaceChild(newChild,child1);   in "parent" element : clear "child1" and replace them with "new child"
+
+        cloneNode()        true    copy gust the parent not child
+                           false   copy the parent and child
+
+----------------Nodes--------------------
+
+   *   You can use the following node properties to navigate between nodes with JavaScript:
+        parentElement
+        childElementCount
+        children.length
+        children[]
+        firstElementChild
+        lastElementChild
+        nextElementSibling
+        previousElementSibling
+
+        parentNode
+        childNodes
+        childNodes.length
+        childNodes[nodenumber]
+        firstChild
+        lastChild
+        nextSibling
+        previousSibling
+
+        tagName           specifies the name of a node, if it is text return (undefined)
+        nodeName          specifies the name of a node. it is (uppercase)
+        nodeValue          specifies the value of a node.
+                        nodeValue for element nodes is null
+                        nodeValue for text nodes is the text itself
+                        nodeValue for attribute nodes is the attribute value
+
+        nodeType          is read only. It returns the type of a node.
+                      1    ELEMENT_NODE      <h1 class="heading">W3Schools</h1>
+                      2    ATTRIBUTE_NODE class = "heading" (deprecated)
+                      3    TEXT_NODE      W3Schools
+                      8    COMMENT_NODE      <!-- This is a comment -->
+                      9    DOCUMENT_NODE  The HTML document itself (the parent of <html>)
+                      10   DOCUMENT_TYPE_NODE   <!Doctype html>
+
+-------Events HTML---------
+
+        onload           The browser has finished loading the page
+        onunload
+        onclick	        The user clicks an HTML element
+        ondblclick 
+        oncontextmeny     on right click
+        onchange  An HTML element has been changed
+        onscroll    the element scroll is move
+        onresize     the window on resize
+        onfocuse
+        onblur
+        onsubmit
+
+        onkeydown	The user pushes a keyboard key
+        onkeypress
+        onkeyup
+        oninput   on include a value
+
+        onmouseenter    // on mouse hover on the element
+        onmouseLleave   // on mouse out of the element 
+        
+        onmouseover     //The user moves the mouse over an HTML element or child
+        onmouseout      //The user moves the mouse out from an HTML element or child
+        mousemove
+
+        event.target    //returns the element that triggered the event.
+
+      elemen.addEventListener(event, function, useCapture)   You can easily remove an event listener by using the method:
+      elemen.removeEventListener()                          removes event handlers that have been attached with the addEventListener() method:
+
+   *  Passing Parameters
+        When passing parameter values, use an "anonymous function" that calls the specified function with the parameters:
+
+   *  elemen.addEventListener(event, function, useCapture);
+           The default value is false, which will use the bubbling propagation,
+                when the value is set to true, the event uses the capturing propagation.
+
+           In bubbling the inner most element's event is handled first and then the outer:
+               the <p> element's click event is handled first, then the <div> element's click event.
+
+           In capturing the outer most element's event is handled first and then the inner:
+                 the <div> element's click event will be handled first, then the <p> element's click event.
+
+   .selectedIndex    option selected element
+
+
+         elementInp.focus()    focus on the element input
+         elementInp.blur()     blur on the element input
+
+         myButton.click()      auto to click on the button
+
+-------------
+
+*  DOM Root Nodes: There are two special properties that allow access to the full document:
+
+        document.body       - The body of the document
+        document.documentElement      - The full document
+
+        document.inputEncoding     // the code type of the document
+        document.lastModified      // last modified of the document
+        document.URL               // the URL of the document
+
+
+* fonding HTML objects
+        
+        document.body           Returns the <body> element  1
+        document.embeds         Returns all <embed> elements   3
+        document.forms          Returns all <form> elements 1
+        document.head           Returns the <head> element  3
+        document.images         Returns all <img> elements  1
+        document.anchors        Returns all <a> elements that have a name attribute 1
+        document.links           Returns all <area> and <a> elements that have a href attribute  1
+        document.implementation  Returns the DOM implementation   3
+        document.inputEncoding   Returns the document's encoding (character set) 3
+        document.lastModified    Returns the date and time the document was updated 3
+
+        document.readyState      Returns the (loading) status of the document 3
+        document.referrer         Returns the URI of the referrer (the linking document)  1
+        document.scripts           Returns all <script> elements  3
+        document.strictErrorChecking   Returns if error checking is enforced  3
+        document.title               Returns the <title> element  
+        document.URL                   Returns the complete URL of the document
+        document.applets               Returns all <applet> elements (Deprecated in HTML5)   
+        document.domConfig Obsolete.   Returns the DOM configuration 
+
+        document.baseURI            Returns the absolute base URI of the document   3
+        document.cookie             Returns the document's cookie 1
+        document.doctype            Returns the document's doctype   3
+        document.documentElement    Returns the <html> element 3
+        document.documentMode       Returns the mode used by the browser   3
+        document.documentURI        Returns the URI of the document  3
+        document.domain             Returns the domain name of the document server  1
+
+
+
+-----------------BOM -------------------------
+        
+        window.alert('')        
+        window.confirm('')         the box returns true or false if click 'OK' or 'Cancel'
+        window.prompt("sometext","defaultText")
+                  \n  To display line breaks inside a popup box
+
+   * size of window browser
+        window.innerHeight             - the inner height of the browser window (in pixels)
+        window.innerWidth              - the inner width of the browser window (in pixels)
+        -for olde browsr
+                document.documentElement.clientHeight
+                document.documentElement.clientWidth
+
+   * window screen    
+        screen.width
+        screen.height
+        screen.availWidth         the width of the visitor's screen, in pixels, without Windows Taskbar.
+        screen.availHeight        the height of the visitor's screen, in pixels, without Windows Taskbar.
+        screen.colorDepth         the number of bits used to display one color. ll modern computers use 24 bit or 32 bit
+                                        24 bits =      16,777,216 different "True Colors"
+                                        32 bits =  4,294,967,296 different "Deep Colors"
+                                        16 bits +  65,536 different "High Colors" resolution.
+        screen.pixelDepth     For modern computers, Color Depth and Pixel Depth are equal.
+
+      elemen.clientHeight     | show the viewable Area containt and padding,
+      elemen.clientWidth      |    no border no scroll no margin
+
+      element.offsetHeight    |  show the viewable Area containt and padding and border and scroll,
+      element.offsetWidth     |     no margin
+
+      elemen.clientTop        |   width of border (and scroll Top)
+      elemen.clientLeft       |   width of border (and scroll Left)
+
+      elemen.scrollHeight     |  show All Area include invisible Area containt and padding,
+      elemen.scrollWidth      |    no border no margin no scroll
+
+      elemen.scrollTop        | show the destanse betwin top and your place now
+      elemen.scrollLeft       |
+
+      document.documentElement.scrollTop
+      document.documentElement.scrollLeft
+      window.scrollX
+      window.scrollY
+
+   * add window 
+        window.open()          - open a new window
+        window.focus()
+        window.stop()
+        window.close()         - close the current window
+        window.moveTo()        - move the current window
+        window.resizeTo()      - resize the current window
+
+        innerHeight    |  of the document (body)
+        innerWidth     |
+        outerHeight      |  of the all demantion of browser
+        outerWidth       |
+
+      scrollBy     add distans every (n)
+      scrollTo     go to distans (n)
+
+      window.pageXOffset
+      window.pageYOffset
+      window.scrollX
+      window.scrollY
+      document.documentElement.scrollLeft
+      document.documentElement.scrollTop 
+
+
+   * Window Location
+        window.location.href returns the href (URL) of the current page
+                              absolut URL
+                              go to current web page
+                              protocol [ FTP, Mail, File ]
+        window.location.host  returns the domain name of the web host
+        window.location.hash  giv me if the link contain hash(#) or no or go to hash link
+        window.location.search   ger or set query search
+        window.location.pathname returns the path (no host and no search)
+        window.location.protocol returns the web protocol used (http: or https:) or changed it
+        
+        window.location.assign('link')   go to the link page
+        window.location.replace('link')  go to the link page and delet curent link frome history
+        window.location.reload(true)          relad the curant page
+                                          - true  reload from server
+                                          - false relad from cache browser  
+        
+
+   * Window History
+        history.back()           - same as clicking back in the browser
+        history.forward()        - same as clicking forward in the browser
+        history.length             returns the number of URLs in the history list of the current browser window
+        window.history.go(number)
+
+   * window.navigator
+        navigator.onLine          returns true if the browser is online:
+        navigator.language        browser's language:
+        navigator.appName         "Netscape" is the application name for both IE11, Chrome, Firefox, and Safari.
+        navigator.appCodeName     "Mozilla" is the application code name for both Chrome, Firefox, IE, Safari, and Opera.
+        navigator.appVersion       
+        navigator.platform        Most browsers returns "Gecko" as product name !!
+        navigator.product         
+        navigator.platform        returns the browser platform (operating system)
+        navigator.cookieEnabled      returns true if cookies are enabled, otherwise false:
+
+        navigator.javaEnabled()   returns true if Java is enabled:
+                        returns version information about the browser:
+        
+         document.cookie("name=value; expires=Date; path=")
+
+
+------------- localStarage ------------------------
+
+   window.localStorage	   //  Allows to save key/value pairs in a web browser. Stores the data with no expiration date
+   window.sessionStorage	 // Allows to save key/value pairs in a web browser. Stores the data for one session
+
+   localStorage.key(n)	          // Returns the name of the nth key in the storage
+   localStorage.length          	 // Returns the number of data items stored in the Storage object
+   localStorage.getItem(keyname)	  // Returns the value of the specified key name
+   localStorage.setItem(keyname, value)	// Adds that key to the storage, or update that key's value if it already exists
+   localStorage.removeItem(keyname)	      // Removes that key from the storage
+   localStorage.clear()	               // Empty all key out of the storage
+
+------------- JSON----------------
+
+   JSON.parse()         // json to js object
+   JSON.stringify()      //  to convert it into a string.
+
+   eval()   convert them back into functions.
+   toString(func)   convert function to String
+
+   for (let x in obj)
+
+----------- AJAX -----------
+
+         const xhttp = new XMLHttpRequest();  // Assign The Request Object To a variable
+         
+         .onreadystatechange     // Function Called when Ready State Change
+         .onload                 // Function Called when Loade is Ready
+
+         .readyState             // The Statue of The Request
+               [0] Request Not Initialized
+               [1] Server Connection Established
+               [2] Request Recieved
+               [3] Processing Request
+               [4] Request is Finished and Response is Ready
+
+         .status                 // Response Satus Code
+               [200] OK
+               [404] Not Founde
+         .statusText            // this property contains the text of the response status, such as "OK" or "Not Found".
+
+         .responseText           // Get Response Code in Text
+
+         .open('Method', url , asyn , user, pasw)
+               Method=> Get :  Send the data to the server in url
+                        Post:  Send the data to the server in => send('data')
+               url=>   the url of file or txt 
+               asun=>  fale: Don't Do any Thing Until finish this Request
+         .send()
+
+         .setRequestHeader(header, value)     // sets the value of an HTTP request header. When using setRequestHeader(),
+                                              you must call it after calling open(), but before calling send().
+                  eg:__ myRequest.setRequestHeader(
+                     "content-type",
+                     "application/x-from-urlencoded"
+                  )
+
+
+
+
+        function loadDoc() {
+        
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+        document.getElementById("demo").innerHTML = xhttp.responseText;
+        }
+        xhttp.open("GET", "ajax_info.txt");
+        xhttp.send();
+        }
+
+   * XMLHttpRequest Object Methods
+
+        new XMLHttpRequest()  Creates a new XMLHttpRequest object
+        abort()            Cancels the current request
+        getAllResponseHeaders()  Returns header information
+        getResponseHeader()   Returns specific header information
+        open(method, url, async, user, psw)  Specifies the request
+                                                method: the request type GET or POST
+                                                url: the file location
+                                                async: true (asynchronous) or false (synchronous)
+                                                user: optional user name
+                                                psw: optional password
+        send()                 Sends the request to the server, Used for GET requests
+        send(string)         Sends the request to the server., Used for POST requests
+        setRequestHeader() Adds a label/value pair to the header to be sent
+
+
+   * XMLHttpRequest Object Properties
+
+        onload             Defines a function to be called when the request is recived (loaded)
+        onreadystatechange Defines a function to be called when the readyState property changes
+        readyState         Holds the status of the XMLHttpRequest.
+                                        0: request not initialized
+                                        1: server connection established
+                                        2: request received
+                                        3: processing request
+                                        4: request finished and response is ready
+        responseText       Returns the response data as a string
+        responseXML          Returns the response data as XML data
+        status             Returns the status-number of a request
+                                        200: "OK"
+                                        403: "Forbidden"
+                                        404: "Not Found"
+                                        For a complete list go to the Http Messages Reference
+        statusText   Returns the status-text (e.g. "OK" or "Not Found")
+
+
+   * Multiple Callback Functions
+        loadDoc("url-1", myFunction1);
+
+        loadDoc("url-2", myFunction2);
+
+        function loadDoc(url, cFunction) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {cFunction(this);}
+        xhttp.open("GET", url);
+        xhttp.send();
+        }
+
+        function myFunction1(xhttp) {
+        // action goes here
+        }
+        function myFunction2(xhttp) {
+        // action goes here
+        }
+
+   *  The onreadystatechange Property
+        function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("demo").innerHTML =
+        this.responseText;
+        }
+        };
+        xhttp.open("GET", "ajax_info.txt");
+        xhttp.send();
+        }
+
+--------- worker --------
+
+postMessage(msg)
+
+* checks if the worker already exists, or not -
+                       it creates a new web worker object and runs the code in "demo_workers.js":
+
+        if (typeof(w) == "undefined") {
+        w = new Worker("demo_workers.js");
+        }
+
+* Add an "onmessage" event listener to the web worker.
+        w.onmessage = function(event){
+        document.getElementById("result").innerHTML = event.data;
+        };
+w.terminate();
+
+* If you set the worker variable to undefined, after it has been terminated, you can reuse the code:
+        w = undefined;
+
+-------- Fetch---------
+* fetches a file and displays the content:
+        let file = "fetch_info.txt"
+
+        fetch (file)
+        .then(x => x.text())
+        .then(y => document.getElementById("demo").innerHTML = y);
+
+---------------
+*  Geolocation API
+        function getLocation() {
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+        }
+
+* Handling Errors and Rejections
+        function showError(error) {
+        switch(error.code) {
+        case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation."
+        break;
+        case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+        case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+        case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+        }
+        }
+
+* The getCurrentPosition() Method
+        coords.latitude	        The latitude as a decimal number (always returned)    خط العرض
+        coords.longitude	The longitude as a decimal number (always returned)    خط الطول
+        coords.accuracy	        The accuracy of position (always returned)       دقة الموقع
+        coords.altitude	        The altitude in meters above the mean sea level (returned if available)  الارتفاع بالأمتار فوق متوسط مستوى سطح البحر
+        coords.altitudeAccuracy	The altitude accuracy of position (returned if available)      دقة ارتفاع الموقع
+        coords.heading  	The heading as degrees clockwise from North (returned if available)  العنوان بالدرجات في اتجاه عقارب الساعة من الشمال
+        coords.speed	        The speed in meters per second (returned if available)
+        timestamp	        The date/time of the response (returned if available)
+
+
+* watchPosition()
+        function getLocation() {
+        if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+
+clearWatch() :     Stops the watchPosition() method.
+
+
+
+
+----- ES6 --------
+
+== to import module must be make attribuite (type = module)
+
+export var myArray = [4, 5, 4] ;        // export single
+
+export {                                // export group
+    myArray,
+    myFunction,
+    myArray as myarr                    // make aliase name to variable
+}
+
+export default function myFunctio(){ // code}   // export default module must be unique
+
+
+
+import { myArray , myFunction} from './file.js'          // import variable from file.js
+
+import * as all from './file.js'                        // import all variable in fil.js as (all) variable
+    all.myArray
+    all.myFunction
+
+import nameDefaultModule form './file.js'               // import defaule module cane be not same name
+
+

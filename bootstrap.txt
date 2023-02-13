@@ -1,0 +1,291 @@
+
+
+******* Bootstrap 3 ****************
+
+
+
+.container = 1170px;
+
+.container-fluid   		// the container full width
+
+lg:   larg			min: 1200px
+md:   mediem		min: 992px
+sm:   small			min: 768px
+xs:   extra small	max: 768px
+
+col-md-4		make width: 1/3  in mediem screen or top
+
+hidden-md		hidden element in mediem screen
+visible-md		visible element in mediem screen
+visible-md-block
+visible-md-inline-block
+visible-md-inline
+
+col-lg-offset-3
+
+.clearfix		// clear float
+
+col-push-4
+col-pull-4
+
+.row 				// deleat margin and padding of parent
+.center-block 		// center block element 
+
+p.lead 				// add poperies of paragraph  
+img.img-reponsive   // make image not big than parent element
+
+text-center
+
+--- nav bar -----
+
+
+	.nav.nav-tabs			// nav simpl width: fit-content
+	.nav.nav-pills			// nav background color width fit-content
+		&.nav-stacked	// let widht 100% 
+		&.nav-justified 	// width of parent 100% and child 
+		
+	.nav.navbar-nav 		// child @media<765 width 100%
+	
+	
+.navbar-dufault
+	.navbar-header 			// for the head (brand and navs)
+		.navbar-toggle.collapsed data-toggle="collapse" data-target="#id-nav1" 	// button for open collaps
+		a.navbar-brand
+			img(alt=brand) 		// can include image
+		
+	.collapse.navbar-collapse #id-nav1 	// for open or close in mini screen
+					// .collape : open and close menu toggle
+					// .navbar-collapse : style for menu toggle
+	
+		.nav.navbar-nav 		// child @media<765 width 100%	
+		
+		form.navbar-form
+			.form-group
+				input.form-control
+			button.btn.btn-defaul		//.btn : for style button general
+		
+		button.navbar-btn 		// for signin button in navbar
+		p.navbar-text 			// for text in navbar
+		
+		.navbar-right 	// let the element in right
+		.pull-right		// force element to float right
+	
+	
+	
+	
+	
+	.dropdown
+		a(class='dropdown-toggle' data-toggle='dropdown' rot='button')
+		span.caret
+		ul.dropdown-menu
+			li>a
+			
+	.divider 	// the separator
+		
+	.disable 	// for 'li' disable link of nav
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top"</nav>
+.navbar-invers 		// dark mode
+.navbar-fix-top		// fix navbar in top
+
+
+
+
+******* Bootstrap 4 ****************
+
+
+-- grid system ----
+
+.container-fluid 	// full width container
+.container.pt-3		// top padding of 16 pixels (.pt-3)
+	
+// Extra small devices (portrait phones, less than 576px)
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+.row
+
+	.col			// auto width 
+	.col-auto	 	// auto fill content
+	
+	.col-md-4 		// the colom for larg screen get 4 colum of 12
+		xl: Extra larg 		≥1200px
+		lg: large screen	≥992px
+		md: mediem screen	≥768px
+		sm: small screen 	≥576px
+		none: extra small	<576px
+		
+	.w-100 			// breack the column 
+	
+
+.row.justify-content-star
+.row.justify-content-center
+.row.justify-content-end
+.row.justify-content-between
+.row.justify-content-around
+
+.row.align-items-start
+.row.align-items-center
+.row.align-items-end
+
+.row.no-gutter
+
+elem.align-self-star
+elem.align-self-center
+elem.align-self-end
+
+.offset-lg-3 	// ignord 3 colomn in left in larg screen
+
+
+.d-none			// display none
+.d-block 		// display block
+.d-inline-block  
+
+.d-lg-none 		// hidden in large screen
+.d-lg-block		// show in medium screen
+
+
+------ Componants ------------
+
+.w-100 			// width: 100% 
+
+.list-unstyled 			// delet list-style and padding
+.list-inline			// delet list-style and padding
+	.list-inline-item		// make <li> inline-block and margin-left:not-last-child
+
+.mr-auto 		// margin-right: auto
+.ml-auto		// margin-left: auto
+.mr-0			// margin-right: 0
+.mt-3			// margin-top: 1em
+
+.pr-3			// padding-right: 0
+
+** img
+	.img-fluid 		// let image responsive (max-width: 100%; height: auto)
+	.img-thumbnail	// make padding and border and border-raduis
+	.rounded		// make border-raduis
+
+.float-right
+.float-left
+
+.mx-auto			// margin-left and margin-right auto
+
+.media					// style for image and text
+	img.mr-3			// image and margin-left: 16px
+	.media-body 		// text
+
+-------- Text and heading---------
+
+.h1,.h2				// change the text to heading
+
+.display-1 			// up the text to heading (weight: 300; font-size: 6rem)
+
+.lead 			// change style of <p> slim
+.text-muted		// change color the grey(#6c757d)
+.text-center
+.text-right
+
+
+blockquote.blockquote
+	p.mb-0
+	footer.blockquote-footer
+		cite(title='')
+		
+.sr-only			// for screen reade only the text is hidden
+
+
+----- alert -------------
+
+.alert.alert-primary(role="alert") 	// Alert for geniral
+	.alert-heading		// headding in alert
+	a.alert-link			// link in alertd
+
+.alert.alert-warning .alert-dismissible.fade.show(role="alert") 	// alert withe close button
+	button.close(data-dismiss="alert" aria-label="Close")
+		span(aria-hidden="true") &times;
+
+------ button and badge ------------
+
+.btn.btn-primary 			// button 
+.btn.btn-outline-primary 	// button outline colored
+.btn .active
+.btn .disabled
+
+
+
+.badge.badge-light					// notification in button
+.badge.badge-secondary .badge-pill	// add border radius to element
+a.badge								// link as badge
+
+
+
+------  nav --------
+
+.nav
+	li.nav-item			// recommended
+		a.nav-link
+		
+.nav
+	a.nav-item.nav-link		// not recommended
+	
+.nav.pills
+.nav.tabs
+
+.nav.justified		// the width id divide on the number of content must the width is equeal
+.nav.fill 			// the width is divide dependin content possible the width not equeal
+
+
+** JS **
+div
+	.nav#nav-tab(rol='tablist')
+		a.nav-item.nav-link(data-toggle='tab' href='#linkOfDiv' rol='tab')
+		a.active 		// for active element
+	.tab-content
+		.tab-pan.fade#LinkOfDiv(rol='tabpanerl')
+		.show.actvie	// for active element
+	
+----- navbar -------
+.navbar.navbar-expand-md.navbar-light
+.navbar.sticky-top							// fix in top
+	a.navbar-brand 
+		|| img 
+	button.navbar-toggler(type='button' data-toggle='collapse' data-target='#idOfCollaps')
+		span.navbar-toggler-icon
+	div(class="collapse navbar-collapse" id="idOfCollaps" data-toggle="dropdown")
+		ul.navbar-nav
+			li.nav-item
+				a.nav-link
+			li.nav-item.dropdown
+				a(class="nav-link dropdown-toggle" id="dropId")
+				div(class="dropdown-menu" id="dropId")
+					a.dropdown-item
+					.dropdown-divider
+					
+		form.from-inline
+			input(class="form-control" type="serach" aria-label='search')
+			button.btn.btn-outline-primary(type='submite')
+
+		.navbar-text
+		
+.navbar-light 			// for the color of element is dark
+.bg-*					// for the background of navbar (primary-dark-info)
+
+-------- Reboot -------------
+
+h1,h2 ..		// all heading margin-top: 0; and margin-bottom: 5rem
+p 				// margin-top: 0  and margin-bottom: 1rem
+
+ul,ol,dl.. 				// margin-top: 0;  margin-bottom: 1rem
+
+

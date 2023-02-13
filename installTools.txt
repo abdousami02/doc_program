@@ -1,0 +1,31 @@
+**** Sass **********
+
+
+
+sass main.scss:main.css
+
+sass --watch main.scss:main.css  --style expanded || compact || compressed
+
+**** Pug **********
+
+
+
+pug index.pug -w -p
+
+**** Gulp *********
+-- work with node js -----
+-- must be install it -------
+
+gulp -v 		// show version of gulp
+npm init 		// initila package.json file
+
+npm i gulp -g 	// install gulp general
+
+npm i --save-dev gulp 	// install gulp local in project 
+
+npm i --save-dev gulp-concat
+
+
+
+
+

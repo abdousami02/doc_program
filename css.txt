@@ -1,0 +1,949 @@
+
+------------------------
+* use font Ausome in sudo element:
+
+    font-family: 'Font Awesome 5 Pro';
+    content: '';
+    font-weight: 300;
+
+* use attribute content in sudo element
+    
+    ::befor{
+        content: attr(data-width)
+    }
+	
+
+
+-------- Whene I use RTL file for Arabic -------
+- Don't Start with Arabic design.
+- Programmers Note: Don't use words direct in Templete.
+- Padding and mragin for parent batter than child.
+
+- Use margin and padding for left + right Than one Direction
+- Don't forget page direction attribute, all block elements depend on it.
+- Hightlight what you will edit soon.
+- Make The direction edits in the same Time (if you make the file arabic)
+
+- Don't ever forget comments and ordering of elements.
+- Use inline-block instead of float if uou don't need float.
+- RTL file is for direction only.
+- RTL file after main file.
+
+- Consider word length when specify element width.
+- Don't destroy nestting when creating RTL file.
+- Don't Use Element that need to change like Arrows, use Pseudo elements.
+
+* Amazing features to help you:
+
+--  <bdi>
+-- Attribute Dir = auto
+-- text-align [ start | end]
+-- float: [ inline-start | inline-end ]
+-- text align classes [ text-right | text-left ]
+-- direction classes [ ltr-dir | rtl-dir ]
+
+* Porperty you need to focus on :
+ 
+ -- margin
+ -- padding
+ -- border-raduis
+ -- pesudo elements
+ -- border
+ -- box-shadow
+
+ -- float
+ -- text-align
+ -- position
+ -- position
+
+
+----- waiting for understand -------------------
+grid 
+@media
+global value
+
+margin : 10%;
+
+background-image: url();
+background-position: 50%;
+
+width: fit-content;
+
+
+
+------------ how to do ---------------
+
+* Conter
+  
+    counter-reset: nameCounter1 nameCounter2    - Creates or resets a counter
+    counter-increment: conterName               - Increments a counter value
+    
+    ::after{
+        content:  counter(conterName)                        - Inserts generated content
+                  counters(conterName,"")                    - Adds the value of a counter to an element
+    }
+
+
+* attr   // show attribute of element 
+
+    a::befor{
+        content: attr(href)         // show the attribute of element bofor element
+    }
+
+* .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+
+
+ -------- unite -----------------
+
+Relative Lengths:
+                em	Relative to the font-size of the element (2em means 2 times the size of the current font)	
+                ex	Relative to the x-height of the current font (rarely used)	
+                ch	Relative to width of the "0" (zero)	
+                rem	Relative to font-size of the root element	
+                vw	Relative to 1% of the width of the viewport*	
+                vh	Relative to 1% of the height of the viewport*	
+                vmin	Relative to 1% of viewport's* smaller dimension	
+                vmax	Relative to 1% of viewport's* larger dimension	
+                %	R
+
+width: fit-content        // the width is just for the content
+------------Background----------------
+
+
+*  background:  -color:#
+                -image:url()        // can do 2 image with cammas (,)
+
+                -repeat: repeat; no-repeat; repeat-x; repeat-y;
+
+                -position: px | % | cover
+                          left top | left center | left botoom | right top | right center | right bottom | 
+                          center top | center | center bottom
+                                              
+                -attachment: fixed ,  scroll  local    // position of image if upper or down
+
+                -clip:  border-box                (where he star'for images and color')
+                        padding-box
+                        content-box 
+
+                -origin:  border-box   (for images)
+                          center-box
+                          padding-box  (dufault)
+
+                -size:  cover          (for images)
+                        contain
+                        auto
+                        (px "width and height") transform
+
+
+* background-blend-mode: normal	This is default. Sets the blending mode to normal	
+                        multiply	Sets the blending mode to multiply	
+                        screen	Sets the blending mode to screen	
+                        overlay	Sets the blending mode to overlay	
+                        darken	Sets the blending mode to darken	
+                        lighten	Sets the blending mode to lighten	
+                        color-dodge	Sets the blending mode to color-dodge	
+                        saturation	Sets the blending mode to saturation	
+                        color	Sets the blending mode to color	
+                        luminosity	Sets the blending mode to luminosity
+            
+*background-image: vear-gradient(to right, color1, color2, color3 ...)    
+
+                    repeating-linear-gradient(to right, color1 20%, color2 40px, color3 ...)
+
+                    repeating-conic-gradient(color1 deg1 , color2 deg2, color3 deg3 ... )  
+
+                    radial-gradients([ellipse,circle], size at position, color1, color2 ... )
+
+                    repeating-radial-gradient()
+
+
+
+--------------border-----------------
+
+* border:
+          border-width: px
+          border-style: none | solid  | hidden | dotted | dashed | double | groove | ridge | inset | outset
+          border-color:
+
+* outline: style color width offset(spase betwin border outlin)
+
+* border-raduis: px;      px\px;      %;
+
+* box-shadow: Xpx Ypx blurpx spread px , otherShadow  //  color inset(in sid border)
+
+* resize: vertical      (allow to resize a div)
+          horizontal
+          both
+          none
+
+----- other border---------
+
+    border-image: [url()] [slice] [repeat];
+                border-image-outset:(like padding but outside)
+                border-image-repeat: stretch | round | repeat | initial|inherit;
+                border-image-slice: (number or % and can do 2 value ) fill
+                border-image-width:
+
+    border-collapse: collapse, separate    (for table)
+
+    * outline-offset:    (spase betwin border outlin)
+
+    * box-decoration-break (specifies how the background, padding, border, and clip-path of an element is applied when the box for the element is fragmented break).
+                            slice   Default. Box decorations are applied to the element as a whole and break at the edges of the element fragments
+                            clone   Box decorations apply to each fragment of the element as if the fragments were individual elements.
+
+    clip-path:  (What happens if an image is larger than its containing element?)
+
+
+ 
+---------------All of Text ---------------
+
+* overflow: visible , hidden , scroll , auto 
+  overflow-x:
+  overflow-y:
+
+* text-align: right; center; left      // justify the text
+
+* text-align-last: right , center      // justify  (the last of line)
+
+* direction: rtl , ltr              // the derection of text for Arabic
+
+* text-shadow: Xpx  Ypx (blur)px color;
+
+* text-decoration:
+                    text-decoration-color:
+                    text-decoration-line:  none|underline|overline|line-through
+                    text-decoration-style: solid|double|dotted|dashed|wavy
+
+* text-transform:   lowercase
+                    uppercase   // all capital
+                    capitalize  // the first capital
+
+
+* vertical-align(for icon):   baseline(defult) , text-top , text-bottom , sub , super ;
+               
+* text-indent:= px %     // space after text
+
+* letter-spacing: px (+ or -); (the space between characters in a text.)
+
+* word-spacing: px;
+
+* line-height: 0.5 (number or px or %)
+
+* white-space:  normal , nowrap, , pre , pre-wrap , pre-line  // how do whith the space bewint the word
+
+* word-wrap: normal , break-word
+
+* text-overflow: clip(defu) , ellipsis(...)  
+
+* text-justify: auto , inter-word , inter-character, none 
+
+* word-break: keep-all , break-all (word may be broken at any character)
+
+* wiriting-mode: horizontal-tb , vertical-rl
+
+* caret-color:    (the color of the cursor (caret) in inputs, textareas, or any element that is editable.)
+* quotes:       (sets the type of quotation marks for quotations.)
+* hyphens     (defines whether hyphenation is allowed to create more soft wrap opportunities within a line of text.)
+
+tab-size: number|length    (specifies the width of a tab character)
+
+attribuit HTML:             //for edit a text
+    contenteditable='true'
+  --------------Font----------------------
+
+* font-family: sans-serif{Tahoma, Verdana,Helvetica}
+
+* font-size:(px or em or vw vh)    // (em = 2) get the font size from parent and   X2 
+
+* font-style: italic; normal; oblique;
+
+* font-weight: normal , bod , 100 => 900
+
+* font-variant:(uppercase smaller) normal , small-caps
+
+* line-height:bold bolder lighter 100-900
+
+* @font-face: font-family:name
+              src:url
+              font-strech:ultra-condensed|extra-condensed|condensed|semi-condensed|normal|semi-expanded|expanded|extra-expanded|ultra-expanded 
+                            (Optional. Defines how the font should be stretched narrow or wide)
+              font-style:normal , italic , oblique (Optional. Defines how the font should be styled)
+              font-width: normal , bold , 100-900
+
+
+  ----------select class--------------------
+
+* select:  > (child)     + (adjacent sibling)      ~ (sibling)
+
+
+   * selector 
+      [attribute]
+      [attribute="value"]   equale value no space after or befor 
+      [attribute~="value"] ( contain | value | and accept space after and befor)
+      [attribute*="value"] ( contain |..value..| )
+     
+      [attribute^="value"] ( begin with |value...| no space after)
+      [attribute$="value"] ( end with |..value| no space befor)
+
+      [attribute|="value"] ( containe |value| or |value-|)
+
+
+  :first-child   (the first child of his parent)
+  :last-child
+
+  :first-of-type  (the first type element of his parent)
+  :last-of-type
+
+  :nth-child(n)    (N , even, odd, 3n+2)
+  :nth-of-type(n)
+
+  :nth-last-child(n)    (element 'n' after last )
+  :nth-last-of-type(n)
+
+  :only-child    (element that is the only child of its parent)
+  :only-of-type
+
+  :not-(selectot: element)   
+  :empty     (element that has no children)
+  
+  :root
+  
+
+
+  * Pseudo-classes
+
+  ::after    (Insert content after element)
+  ::befor    (Insert content before element)
+
+  ::first-latter   (Selects the first letter of element)
+  ::first-line    (Selects the first line of element)
+
+  
+  
+
+  :link
+  :visited
+  :hover
+  :active  // clicked
+  :focus
+  :checked
+
+  :disabled
+  :enabled    
+  :required
+  :optional    // not required
+  :focus
+
+  ::selection       // when the user select text 
+  ::placeholder
+  ::marker      (selects the markers of list items.)
+
+  
+  :out-of-rang   (elements with a value that is outside a specified range)
+  :in-range      (elements with a value that is within a specified range)
+  :valid
+  :invalid    (elements with an invalid value out value)
+
+  :required   (elements with a "required" attribute specified)
+  :optional    (elements with no "required" attribute)
+  :read-only   (elements with a "readonly" attribute specified)
+  :read-write   (elements with no "readonly" attribute specified)
+  :root      (the document's root element)
+  :target   (Selects the current active #news element (for local id)) 
+                can be used to style the current active target element.
+  
+
+  ------ event -----------------
+
+- pointer-events: none auto (defines whether or not an element reacts to pointer events.)
+
+- user-select: none , text , all, auto      // con't user select the element
+
+- caret-color: color;           // the color of bar edit text
+
+html attr : contenteditable='true'
+
+--------------- list-style -------------------------------
+
+* list-style-type: none decimal disc circle square upper-roman lawer-alpha
+* list-style-position: inside , outsidr
+* list-style-image: url("")
+      (use background fo color; "padding for ol,ul" and padding and margin for li") 
+                <> list-style: type position image;
+
+
+----------Table-----------------
+
+* border-collapse: collapse, separate,
+* vertical-align: top; middle; bottom;(محاذات النصوص في الجدول)
+* text-align: left , center , right
+* outlint: width style color; (الحدود الخارجية)
+* border-spacing: (horizontal)px (vertical)px
+* table-layout: auto , fixed (defines the algorithm used to lay out table cells, rows, and columns.)
+* empty-cells: hide , show
+* caption-side: bottom , top
+row
+
+--- input -----
+
+* date input field
+input::-webkit-calendar-picker-indicator                // costume date input
+
+
+
+   -------------------------------
+
+
+* visibility:  -hidden
+               -visible
+               -collapse (for table This value removes a row or column, but it does not affect the table layout.
+                               The space taken up by the row or column will be available for other content.)
+
+* position: static;(dufault)
+            relative;   (the same dimension  and move position)
+            fixed;    (will be inline)
+            absolute;  (will be fixed in the element content)
+            sticky: ()
+       
+* z-index: 
+
+-----------------------------
+
+* overflow: visible , hidden , scroll , auto 
+  overflow-x:
+  overflow-y:
+
+* float:  right; left; 
+* clear:  both , left , right  
+
+
+
+* cursor:  auto | crosshair | default | e-resize | help | move | n-resize | ne-resize | nw-resize
+           pointer | not-allowed | progress | s-resize | se-resize | sw-resize | text | w-resize | wait
+
+
+------------transforms--------------
+
+transform:  translate(Xpx, Ypx)  (move , px, %)
+            rotate(deg, turn) 
+            scale(X , Y)  (increases or decreases the size of an element if it is - rotate 90deg )
+            skew(Xdeg, Ydeg)
+
+            matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+
+
+
+            rotateZ(deg, turn)  3D
+            rotate3d(X, Y, Z, deg)
+
+            translateZ()
+            trnaslate3d(X, Y, Z)
+
+
+            perspective(px)     (it is for parent, how far the object is away from the user.)
+
+
+
+transform-origin: x-axis y-axis z-axis   (allows you to change the position of transformed elements.)
+    ---------------------
+    x-axis:         // Defines where the view is placed at the x-axis. Possible values:
+            px
+            %
+            left   = 0%
+            center = 50%
+            right  = 100%
+
+    y-axis               // Defines where the view is placed at the y-axis. Possible values:
+            px
+            %
+            top    = 0%
+            center = 50%
+            bottom = 100%
+            
+    z-axis  Defines where the view is placed at the z-axis (for 3D transformations). Possible values:
+            length
+
+
+backface-visibility: visible | hidden
+
+transform-style: preserve-3d , flat       // for the child to repect his postion in 2d
+
+for parent
+    perspective:px , none  (how far the object is away from the user.)
+    perspective-origin: px , % (which position the user is looking at the 3D-positioned element.)
+
+
+
+ 
+
+
+--------transition----------------
+
+transition:
+    transition-duration: 2s , 1s	                how timing for finish
+    transition-delay: 1s , 3s	                    delay for star the effect
+    transition-property: width , height             CSS property to apply the transition
+    transition-timing-function: ease , liner
+                                  ease           - slow start, then fast, then end slowly (this is default)
+                                  linear         - the same speed from start to end
+                                  ease-in        -  slow start
+                                  ease-out       -  slow end
+                                  ease-in-out    -  slow in start and end
+                                  
+*  scroll-behavior: smooth , auto     // specifies whether to smoothly animate the scroll position,
+                            instead of a straight jump,when the user clicks on a link within a scrollable box.)
+
+
+---------animation----------------
+
+@keyframes nameAnim{        // Specifies the animation code
+    0%{
+        // your style
+    }
+    100%{
+        // your style
+    }
+}	    
+
+
+
+animation	          A shorthand property for setting all the animation properties
+      animation-name:	               the name of the @keyframes animation
+      animation-duration:               time for complete cycle
+      animation-timing-function:    ease            fast start  then slowly in end (this is default)
+                                    linear          same speed from start to end
+                                    ease-in         slow in start
+                                    ease-out        slow in end
+                                    ease-in-out     slow in start and end
+                                    cubic-bezier(n,n,n,n) 
+
+      animation-delay	           delay for start the animation
+      animation-iteration-count	   number of replay  or |infinite|
+      animation-direction   normal              played as normal (forwards). This is default
+                            reverse             played backwards
+                            alternate           played forwards first, then backwards 
+                            alternate-reverse   played backwards first, then forwards
+
+    animation-fill-mode     none         Default value. Animation will not apply any styles 
+                            forwards     keep the last style of keyframe
+                            backwards    set the style of first keyframe in -delay period
+                            both         follow the rules for both forwards and backwards
+
+    animation-play-state         	Specifies whether the animation is     running | paused
+
+--------filter for image--------------
+
+filter: blur
+        grayscale   (black and white)
+        sepia   (yellow)
+        brightness  ( light)
+        contrast   (تباين)
+        opacity 
+        dropshadow   
+        hue-rotate(deg)
+        invert
+        saturate  (force color)
+        url
+
+ [for image in small containt]
+* object-fit: fill         
+              contain       
+              cover         
+              none         
+              scale-down    
+
+* object-position: Xpx Ypx (margin of image)
+
+
+-----------------variabel---------------------
+declair
+      :root {
+      --"nameVariable": value;
+      }       
+              
+utiluse 
+    color: var("name variable", value(optinale))
+
+----------------flex box---------------------
+
+display:flex
+
+flex-flow:
+        flex-direction: row                 // dufault 
+                        row-reverse  (rtl)  
+                        column
+                        column-reverse
+                        
+        flex-wrap: nowrap       // dufault 
+                   wrap
+                   wrap-reverse
+
+justify-content: flex-star      // dufault 
+                 center
+                 flex-end
+                 space-around
+                 space-between
+                 space-evenly
+
+
+align-items:  stretch        // default  tak the max height in posible
+              flex-star      // on the top
+              flex-end       // on the bottom
+              center         
+              
+
+align-content: flex-start            (vertical for all line)
+               flex-end
+               center
+               space-betwin     
+               space-around
+               stretch
+               
+               
+- for Item (order):
+
+alingn-self:         // it is (align-items:) property for special element
+
+order:
+
+flex:
+    flex-grow: 0     how much a flex item will grow relative to the rest of the flex items.
+    flex-shink: 1     how much a flex item will shrink relative to the rest of the flex items.
+    
+    flex-basis: 0   px or %     // min-width and min-height of element
+
+
+
+-------------grid ----------------
+
+display: grid , inline-grid
+
+
+ grid-template:
+
+            grid-template-columns: px, % , auto , fr, 
+                repeat(num, unit)        // num: the number of colomn , unit: the width of element
+                repeat(auto-fill, minmax(300px, 1fr));
+
+            grid-template-rows: px, % , auto , fr, repeat(), Mix  => [number of rows in]
+
+            grid-template-areas: "logo logo . nav nav nav nav nav" "area2 area2 area2 area2" ... ;
+
+grid-area: 'nav'    // the name of area for use in grid-templete-areas
+
+gap:               (space between)
+     row-gap: px
+     column-gap: px
+     
+
+
+justify-content: flex-star      // dufault 
+                 center
+                 flex-end
+                 space-around
+                 space-between
+                 space-evenly
+
+
+align-items:  stretch        // default  tak the max height in posible
+              flex-star      // on the top
+              flex-end       // on the bottom
+              center         
+              baseline
+              
+
+align-content: flex-start            (vertical for all line)
+               flex-end
+               center
+               space-betwin     
+               space-around
+               stretch
+               
+
+    grid-row: 1 / 3  ||  span 3   ||   1 / span 2
+          grid-row-start: 1
+          grid-row-end: 3
+
+    grid-column: 1 / 3  || span 3   ||  1 / span 2
+          grid-column-start: 1
+          grid-column-end: 3
+
+grid-area: grid-row-start / grid-column-star / grid-row-end / grid-column-end
+
+
+
+-----------------------
+    
+
+
+
+grid-auto-rows:  (sets a size for the rows in a grid container.)
+grid-auto-columns: (sets a size for the columns in a grid containe)
+grid-auto-flow: row|column|dense|row dense|column dense;  (controls how auto-placed items get inserted in the grid.)
+
+justify-content:center
+                space-evenly
+                space-around
+                space-between
+                star
+                end
+
+align-centent:  center
+                space-evenly
+                space-around
+                space-between
+                star
+                end
+
+--------------multiple columns of text---------------------
+
+columns             A shorthand property for setting column-width and column-count
+      column-width:          Specifies a suggested, optimal width for the columns
+      column-count:      Specifies the number of columns an element should be divided into
+
+column-gap:        Specifies the gap(space) between the columns
+
+column-rule: 4px solid red;         // the rule between the column width and style and color
+
+
+h2{
+    column-span :none|all           // it is for heading if it is top for all text or for just the first 
+}
+
+
+
+--------@media-----------
+
+    // use for external file
+<link rel="stylesheet" src="http://..."  media="(max-width: 1000px) and (min-width: 700px)">  
+
+
+      @media not|only mediatype and (expressions) {
+              CSS-Code;}
+
+  all	Used for all media type devices
+  print	Used for printers
+  screen	Used for computer screens, tablets, smart-phones etc.
+        max-width
+        min-width
+        orientation: landscape,Portrait
+  speech	Used for screenreaders that "reads" the page out loud
+
+
+
+
+-----------scrollbar------------------
+*firfox:
+scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+
+*chrom:
+    ::-webkit-scrollbar                the scrollbar.
+    ::-webkit-scrollbar-button         the buttons on the scrollbar (arrows pointing upwards and downwards).
+    ::-webkit-scrollbar-thumb          the draggable scrolling handle.
+    ::-webkit-scrollbar-track           the track (progress bar) of the scrollbar.
+    ::-webkit-scrollbar-track-piece     the track (progress bar) NOT covered by the handle.
+    ::-webkit-scrollbar-corner         the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+    ::-webkit-resizer                  the draggable resizing handle that appears at the bottom corner of some elements.
+
+
+=============================================================================
+
+--------------------------------
+
+* display:  inline  Displays an element as an inline element (like <span>). Any height and width properties will have no effect 
+            block         Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width  
+            contents    Makes the container disappear, making the child elements children of the element the next level up in the DOM   
+            flex            Displays an element as a block-level flex container 
+            grid         Displays an element as a block-level grid container    
+            inline-block    Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values 
+            inline-flex       Displays an element as an inline-level flex container 
+            inline-grid       Displays an element as an inline-level grid container 
+            inline-table    The element is displayed as an inline-level table   
+            list-item         Let the element behave like a <li> element    
+            run-in        Displays an element as either block or inline, depending on context   
+            table               Let the element behave like a <table> element   
+            table-caption     Let the element behave like a <caption> element   
+            table-column-group  Let the element behave like a <colgroup> element    
+            table-header-group  Let the element behave like a <thead> element   
+            table-footer-group  Let the element behave like a <tfoot> element   
+            table-row-group      Let the element behave like a <tbody> element  
+            table-cell           Let the element behave like a <td> element 
+            table-column       Let the element behave like a <col> element  
+            table-row           Let the element behave like a <tr> element  
+
+'\00bb'  >>
+&laquo;  >>
+❯
+❮
+
+-----------------------------------------
+
+<link href="main.css" rel="stylesheet" type="text/css" >
+
+@import
+appearance: none
+
+
+
+box-sizing: border-box , content-box
+* :lang(the lange eg:en,fr,ar)
+
+------------------------
+
+wrap
+* opacity:(transparant of element)0.0 - 1;
+bold
+transform: translate(-50%, -50%); transparant
+  mix-blend-mode: darken;  (specifies how an element's content should blend with its direct parent background.)
+                          normal|multiply|screen|overlay|darken|lighten|color-dodge|
+                          color-burn|difference|exclusion|hue|saturation|color|luminosity;
+isolation:  isolate, auto;
+object
+
+-------------------
+* unicode-bidi:  (is used together with the direction property to set or return  whether the text should be overridden )
+                  bidi-override , normal , isolate, isolate-override, plaintext      
+* (color keyword): transparant  currentcolor  inherit 
+-------------
+
+page-break-before
+page-break-after
+page-break-inside
+
+
+
+********** SASS ****************
+
+sass main.scss master.css
+
+sass -watch main.scss:master.css 
+
+sass -watch main.scss:master.css -- style expanded || compact || compressed
+
+_main.scss          // the companat ignord the file
+-------------
+
+// variabl
+$var1: value
+
+// neasting
+.parent{
+
+    .child{
+
+        .grandChild{}
+    }
+
+    &:hover{ }
+
+    &::befor{ }
+}
+
+.class1{
+    @extand .class2          // tak the porper of class2 and put it in class1
+}
+
+
+%prop{
+    color: red;
+}
+.class1{
+    @extand %prop           // tak the porper of prop and put it in class1
+}
+
+
+
+@import 'master.scss'       import file into my file
+
+
+color: rgba(#f00, .3)
+
+#{$var1+ 'hi' + $var2}
+
+
+font: {
+	weight: 400;
+	size: 15px;
+}
+
+---------------
+
+
+@mixin funcNam($num){
+    background-size: $num
+    -wibkit-background-size: $num
+    -moz-background-size: $num
+    -o-background-size: $num
+}
+
+@mixin funcNam($num...)			// all the argemant include in it
+
+
+.class1{
+    @include funcNam(25px)
+}
+
+@function funcNam($var1){
+    @return $var1++;
+}
+
+@if $var == value {
+    $var2: value;
+    $var3: value;
+}
+
+#{$var}         // print the value of variable
+
+@for $i from 1 through 20 {     through vs to   // through(includ 20) , to(not includ 20)
+    .class#{$i}{
+        font-size: 16px + $i;
+    }
+}
+
+
+@each $var1 in @varList {
+    .img-#{$var1}{
+        background: url('images/#{$var1}.jpg')
+    }
+}
+
+@each $var1 $var2 in (facebook, blue), (youtube, red) {
+    .img-#{$var1}{
+        background: url('images/#{$var1}.jpg');
+        color: $var2;
+    }
+}
+
+$map1: (key: value, key: value)
+
+@each $key1, $val1 in $map {
+    #{$key1}{
+        font-size: $val1;
+    }
+}
+
+
+@while $x > 0 {
+    .col-#{$x} {
+        width: $x;
+    }
+}
+
+
+-------- font Awsome size- ----
+
+fa-xs
+fa-sm
+fa-lg
+fa-2x
+fa-3x
+fa-5x
+fa-7x
+fa-10x
+
+
