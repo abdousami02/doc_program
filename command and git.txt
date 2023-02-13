@@ -238,7 +238,7 @@ du -sh
 
 ---------- git ------------
 
-git init
+git init					// initilise new repo on this directory
 
 git clone [https]   			// download the repsetry in this folder
 git add  <nameFile>				// add file in staging area
@@ -271,7 +271,8 @@ git remote add origin git@github.com:abdousami02/secend-web-sit.git
 git push -u RemotName branchName    // pull and push
 git push RemotName branchName
 
-git pull
+git pull			// don two something fetch and merge
+git fetch
 
 git config -l                   // show all configaration
 git config --global --edit      // show config in editor
@@ -279,7 +280,7 @@ git config --global --edit      // show config in editor
 git config --global user.name ""
 git config --global user.email ""
 
-ssh-keygen -t rsa -b 4096 -c "myEmail"      generat a public key 
+ssh-keygen -t rsa -b 4096 -C "myEmail"      generat a public key 
 
 ssh -T git@github.com
 
