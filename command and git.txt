@@ -12,12 +12,16 @@ Alt + Tab     scroll in window
 ctrl + h       // replace text with anthor text
 
 +
+
+Alt + shift + # 		// show line in nano
 -----google Search 
 
 site:php.net 			// retuern result just from php.net
 
 
  SS64.com
+ 
+
 -------- Commend Line ----------
 
 cd 				// change deretory  that main folder
@@ -38,7 +42,7 @@ pwd 						// show chain(url) of folder
 touch file.txt 				// creat new file.txt
 file file.txt 				// show infomatin 
 
-rm 					// delet 
+0791721027 delet 
 rm -r
 rm -i 			// confirm before deleat
 rm -d				// delet unique the empty 
@@ -55,8 +59,8 @@ mv test fonts		// move test folder in fonts folder
 mv test ..\			// move test folder to back parent
 mv test \ 			// move test folder to the root
 
-mv -i file			// confirme (if have same file name)
-
+mv -i file							// confirme (if have same file name)
+mv -t folderIN file1 file2 file3 		// move file1-file2-file3 to folderIN
 
 echo "string" > abdou.txt 	// creat abdou file and write to it or overide
 echo "string" >> abdou.txt 	// if file exist not overide
@@ -213,6 +217,11 @@ ufw status
 
 apt full-upgrade
 
+----- apt ---------
+apt search 
+
+sudo dpkg -i <namePackage>			// install package has download
+wget <linkOfPackage>				// download package from web
 
 -------- cmd ------------
 
@@ -236,21 +245,36 @@ df -h
 du -h 					// size of special file
 du -sh
 
----------- git ------------
+update-rc.d apache2 disable/enable			// if start with system or not
+sudo systemctl disable apache2				//same as the top
 
-git init					// initilise new repo on this directory
+systemctl start apache2 mysql
+
+/etc/init.d/apache2 start			// start apache2 service
+
+
+
+============= git =====================
+
+
+
+git init						// initilise new repo on this directory
+
+git remote add origin [https]  		// add locla branch to github 
+
 
 git clone [https]   			// download the repsetry in this folder
 git add  <nameFile>				// add file in staging area
 git status
 git commit -m "comant"
 
-git restore --staged <path>   					// remove form stage area
+git restore --staged <path>   			// remove form stage area
+git reset head <nameF> 					// deleat folder from staging area
+
 git restore  <path>       						// ignord the new changed in the file
 git restore --source <commit source> <path>  	// reset special version
 git rm
 
-git reset head <nameF> 			// deleat folder from staging area
 
 
 git branch
@@ -262,11 +286,14 @@ git branch -d master        // delet 'master' branch if it is merged
 git branch -D master        // delet master branch
 
 
-git merge master        // merge(group) master branch to main branch
+git merge master        // merge(groNNup) master branch to main branch
 
-git remote -v   // get the remot name
-git remote add origin git@github.com:abdousami02/secend-web-sit.git  
-                                  // add locla branch to github 
+git remote -v   		// get the remot name
+
+
+git remote set-url origin git@github.com:abdousami02/shop.git		// change to ssh 
+
+ssh-keygen -t ecdsa -b 521 -C "your_email@example.com"
 
 git push -u RemotName branchName    // pull and push
 git push RemotName branchName
@@ -275,10 +302,25 @@ git pull			// don two something fetch and merge
 git fetch
 
 git config -l                   // show all configaration
-git config --global --edit      // show config in editor
 
 git config --global user.name ""
 git config --global user.email ""
+
+git config --global --edit      // show config in editor
+
+
+[color "status"]
+	added = yellow
+	changed = red bold
+	untracked = magenta bold
+	
+[color "branch"]
+	remote = yellow
+
+
+
+----- public key ----------
+
 
 ssh-keygen -t rsa -b 4096 -C "myEmail"      generat a public key 
 
@@ -337,28 +379,9 @@ git push origin v1.0   // push new tag in repo
 git push origin v1.0    // push deleted tag to github
 
 
-------- install apache & MySQL -----------
+------ other commande -----------
 
-apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+//set brave default borwser
+xdg-settings set default-web-browser brave-browser-beta.desktop
 
-mysql_secure_installation
-	= if error run cond in mysql
-		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
 
-romve anonymous user 		-> yes
-login remootely 			-> no
-remove test database 		-> yes
-reloade privilege tables 	-> yes
-
-enter to mysql:
-	mysql -u root -p
-	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
-	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
-	FLUSH PRIVILEGES
-
-update-rc.d apache2 disable/enable			// if start with system or not
-sudo systemctl disable apache2				//same as the top
-
-systemctl start apache2 mysql
-
-/etc/init.d/apache2 start			// start apache2 service

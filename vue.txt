@@ -29,8 +29,24 @@ var vm = new Vue({
 		saySomething: function(){
 			return "hello from vue.js";
 		}
+	},
+	mounted: function () {		// function run with code
+		//
 	}
 
 })
+
+******* 	Redirect *************
+// object
+router.push({ path: 'home' })
+
+// named route
+router.push({ name: 'user', params: { userId: '123' } })
+
+// with query, resulting in /register?plan=private
+router.push({ path: 'register', query: { plan: 'private' } })
+
+// with hash, resulting in /about#team
+router.push({ path: '/about', hash: '#team' })
 
 
