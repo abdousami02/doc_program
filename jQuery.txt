@@ -213,7 +213,7 @@ $('element').css("property","value");
 	$("").html( function( index, oldHTML ){  })  	// have callBack functiion, index of the current element in the list of elements
 	$("").text(function( index, oldText ){   })		// have callBack functiion, index of the current element in the list of elements
 	$("").attr('attribut' , function(index, oldattr){  })
-
+	$("").removeAttr('attribut');
 
 
 
