@@ -1,0 +1,51 @@
+
+
+// validate request and return error if fail
+$req->validate([
+  'title' => 'required | string ',
+  'date'  => 'required | date',
+  'location'  => 'required | string',
+  'description'=> 'required | string',
+]);
+
+
+// show all errors
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
+
+
+
+// show error alert
+@error('tilte')
+	<span class="invalid-feedback" role="alert">
+	  <strong>{{ $message }}</strong>
+	</span>
+@enderror
+
+
+
+// construct function
+public function __construct()
+  {
+      $this->middleware('auth');
+  }
+ }
+
+
+retrun back()->with('success', 'message')
+
+@if(session('success'))
+@endif
+
+
+cronjobs
+
+
+
