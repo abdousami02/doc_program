@@ -46,6 +46,15 @@ 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
 	  </Directory>
 	</VirtualHost>
 		
+	<VirtualHost *>
+    DocumentRoot "/opt/lampp/htdocs/project"
+    ServerName project_local
+    
+    <Directory "/opt/lampp/htdocs/project">
+        AllowOverride All
+        Require local
+    </Directory>
+	</VirtualHost>
 		
  
 ========== laravel porject ===========
@@ -151,3 +160,115 @@ enter to mysql:
 	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 	FLUSH PRIVILEGES
 
+
+
+======= Laravel ===============
+
+Route:get('abdut', function () {		// return view
+	return view('pageName', []);
+});
+
+Route:view('contact', 'pageName', []);		// return view
+
+Route:view('contact', 'pageName', [		// pass variable to view page
+	'var1' => 'value1', 
+	'var2' => 'value2'
+]);
+
+
+<h1>{{ $var1 }}</h1>		// show variable from rout to view
+<p>{!! $var2 !!}</p>		// same top but scape security
+
+
+====== Route =====================
+
+Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
+
+Route::match(['get', 'post'], '/', function () { }); 
+Route::any('/', function () { });
+
+Route::redirect('/here', '/there', 301);
+
+Route::view('/home', 'welcome');
+
+Route:get('contact', fucntion () {			// pass querry as parameter in view;
+		$id = request("id");
+		return $id;
+	})->name("routeNmae");						// define name of route
+
+Route:get('contact/{id}', fucntion (Request $req, $id) {			// pass querry as parameter in view;
+
+	return 'User'.$id
+});
+
+Route::get('/user/{name?}', function($name = null){
+	return $name
+})
+
+
+// RegExp validat
+//
+Route::get('/user/{name}', function ($name) { // })->where('name', '[A-Za-z]+');
+ 
+Route::get('/user/{id}', function ($id) { // })->where('id', '[0-9]+');
+ 
+Route::get('/user/{id}/{name}', function ($id, $name) { // })->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+
+// Route Name'
+//
+Route::get('/user/{id}/profile', function ($id) { // })->name('profile');
+ 
+				$url = route('profile', ['id' => 1, 'photos' => 'yes']);
+				 
+				//--   /user/1/profile?photos=yes
+
+
+// Route Group
+//
+Route::middleware(['first', 'second'])->group(function () {
+  Route::get('/', function () {
+      // Uses first & second middleware...
+  });
+});
+
+Route::controller(OrderController::class)->group(function () {
+	Route::get('/orders/{id}', 'show');
+}); 
+
+Route::domain('{account}.example.com')->group(function () {
+    Route::get('user/{id}', function ($account, $id) {
+        //
+    });
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        // Matches The "/admin/users" URL
+    });
+})
+
+Route::name('admin.')->group(function () {
+    Route::get('/users', function () {
+        // Route assigned name "admin.users"...
+    })->name('users');
+});
+
+
+
+@extends('fileName')		// extends a file to this file
+
+@yield('title', 'default_title')	// 
+
+
+@section('title', 'abdou_me')		// short use section
+
+@section('content')
+	@parent
+	<div>this is text</div>
+@endsection
