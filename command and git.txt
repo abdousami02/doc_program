@@ -98,7 +98,7 @@ useradd -m -G sudo,games.sami -s /bin/bash wafa
 		-m 				// add folder in Home
 		-G sudo,sami 	// add user to group (sudo,sami)
 		-s /bin/bash	// can to enter to system  
-		
+		f
 usermod -G games,sami abdou	// modefi groups of user abdou
 passwd sami 			// change password of sami user
 

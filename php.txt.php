@@ -1,7 +1,6 @@
 
 <?php
 	echo "";	 	// the syntax of PHP
-	
 ?>	
 
 echo | print 		// show the data in page

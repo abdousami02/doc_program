@@ -16,6 +16,8 @@ echo "hell"		// for tack bug start and end
 set +x 			// 
 
 
+set 		// show variable global
+env			//show vaiable
 
 echo $BASH_VERSION
 echo $HOSTNAME			// name computer
@@ -29,4 +31,12 @@ echo $SHELL
 echo $DISPLAY
 export EDITOR=/usr/bin/nano
 echo $EDITOR
+
+varName="value of variable" 		// defin variable
+$varName 		// get value of variable
+${varName}
+${varName=newvar} 	// if variable empty
+unset varName 		// unset variable
+
+sleep 3 		// sleep 3 sec
 
