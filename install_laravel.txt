@@ -3,6 +3,7 @@
 
 @csrf
 
+-u sami -p Abdou123.
 
 ssh badnjhvi@66.29.141.209 -p 21098
 
@@ -53,8 +54,16 @@ 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
 --- show graphic panel of xampp ----
 
 sudo /opt/lampp/./manager-linux-x64.run
-		
+sudo /opt/lampp/manager-linux-x64.run
  
+
+ === version php ======
+
+sudo update-alternatives --set php /usr/bin/php7.3
+sudo a2dismod php8.1
+sudo a2enmod php7.3
+
+
 ========== laravel porject ===========
 
 export NODE_OPTIONS=--openssl-legacy-provider
@@ -136,6 +145,9 @@ calc_price(prod, method){
 	return total.toFixed(2);
   }
 },
+
+
+
 	
 -------- model DataBase --------
 
