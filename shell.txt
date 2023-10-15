@@ -1,0 +1,32 @@
+
+#!/bin/bash
+
+echo "hello, ${LOGNAME}"
+
+// the file must be have x(exucute) action 
+
+
+bash -x <nameShell> 		// for debug show line and output
+bash -n <nameShelFile> 		// debug show error
+
+#!/bin/bash +x 		// for debug show line and output
+
+set -x			//
+echo "hell"		// for tack bug start and end
+set +x 			// 
+
+
+
+echo $BASH_VERSION
+echo $HOSTNAME			// name computer
+echo $CDPATH			
+echo $HISTFILE 			// history file path
+echo $HISTFILESIZE 	
+echo $HOME
+echo $PATH
+echo $TERM
+echo $SHELL
+echo $DISPLAY
+export EDITOR=/usr/bin/nano
+echo $EDITOR
+

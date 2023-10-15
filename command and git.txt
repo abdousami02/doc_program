@@ -42,7 +42,6 @@ pwd 						// show chain(url) of folder
 touch file.txt 				// creat new file.txt
 file file.txt 				// show infomatin 
 
-0791721027 delet 
 rm -r
 rm -i 			// confirm before deleat
 rm -d				// delet unique the empty 
@@ -143,7 +142,7 @@ pgp -o outFile fileEnc			//
 ----
 exit
 
-ssh -p 22 username@domain.com			// connect to server with ssh connect
+ssh username@domain.com	-p 22		// connect to server with ssh connect
 
 scp file2 abdou@domain.com:/home/u 		// send file to server whith ssh conect
 
@@ -172,7 +171,7 @@ alias 				// short of command
 whoami 			// show user
 
 
-ipconfig
+ifconfig
 tasklist
 systeminfo		//
 
