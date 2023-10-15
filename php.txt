@@ -14,7 +14,7 @@ const Name = Value								// constant for OOP
 $name1 . $name2 	// concatenate whithe variable
 $first .= "last"	// the same $first = $first . "last"
 
-getype()		// get the type of element
+gettype()		// get the type of element
 var_dump() 		// get the type and length and value of element
 
 
@@ -428,6 +428,19 @@ fseek(handle, offset, whence)
 fclose(handle)							// close file handele.
 
 
+-------- Auther ------------
+
+include "";				// include file in page
+
+include_once ""			// include file just once 
+
+require ""; 			//  include file page but not compleat read code
+require_once ""; 		// include but not compleat the code
+
+
+$GLOBALS['var'] = value				// make or call variable globale
+
+
 
 -------- Cookies -----------
 
@@ -448,17 +461,24 @@ count($_COOKIE)					// number of cookies in page
 
 
 
--------- Auther ------------
+session_start();						// star or resume session on server
 
-include "";				// include file in page
+$_SESSION['nam'] = "value";				// set
 
-include_once ""			// include file just once 
-
-require ""; 			//  include file page but not compleat read code
-require_once ""; 		// include but not compleat the code
+$_SESSSION								// return array show all session value
 
 
-$GLOBALS['var'] = value				// make or call variable globale
+session_unset();						// unset session
+session_destroy();						// end session on server
+
+// file confige (php.ini) have session config in line 1400
+
+session_get_cookie_params($timlif, $path, $host, $ifHttpOnly, $ifSecurHttps)
+session_set_cookie_params()				// set config of session parames
+session_name()							// set the name of session id
+session_regenarate_id()					// rewrit id of session
+session_save_path()						// 
+
 
 
 
@@ -472,28 +492,18 @@ $_SERVER['SERVER_ADDR']					// IP address of the server under which the current 
 $_SERVER['SERVER_PORT']					// port of server used
 
 $_SERVER['REQUEST_METHOD']				// the method of send data return: [POST , GET]	
-$_SERVER['QUERY_STRING']				// string from url after (?) [?name=abdou&list=23&age=12]
-
 $_SERVER['HTTP_REFERER']				// get the link you come from
 
+$_SERVER['QUERY_STRING']				// string from url after (?) [?name=abdou&list=23&age=12]
+$_SERVER['REQUEST_URI']					// get all path URL
 
 $_GET['name']							// the name in url after (?)
 $_POST['name']							// get data from (form) with POST method
-$_REQUEST['name']						// same POST
+$_REQUEST['name']						// same POST and GET
 
 
 
-session_start();						// star or resume session on server
-
-$_SESSION['nam'] = "value";				// set
-
-$_SESSSION								// return array show all session value
-
-
-session_unset();						// unset session
-session_destroy();						// end session on server
-
-
+phpinfo();
 *******
 
 sleep(sec)							// delay after (sec) seconde
@@ -507,6 +517,17 @@ die(message)							// same exit
 uniqid(prefix, morEnt[bool])			// randome id unique id with (10 carach)
 										// prefix befor inique id
 										// (morEnt) if true get id more randome with (23 carach)
+
+
+==== cipher ===========
+
+openssl_encrypt(
+    string $data,				// data to encrypt
+    string $cipher_algo,		// algo
+    string $passphrase,			// 
+    int $options = 0,
+    string $iv = "",
+  ): string|false
 
 
 function DelayTime($ms){ 
@@ -628,14 +649,64 @@ filter_var(var, filter_type, options)		// filter input fieald
 
 
 
-========================================
+========== OOP ===================
 
+class myobj {					
+	
+	public $name = "uname";
+	public $age = 20;				// set propertie named age in class
+	private $pass;					// set propertie private
+	
+	const MYNAME = "SAMI";
+	
+	public function funName($n, $a) {		// set method in calss
+	
+		echo $this->name;			// get vaiable of object or class
+		echo self::MYNAME			// get constanse of class
+		
+		$this->name = $n;
+		$this->age = $a;
+	}
+	final public function funName() {		// this function cant overide
+		
+	}
+	abstract public function sayBy(){		// function can't be have body just for inherite
+		
+	}
+	
+	public function __toString() {				// function to retrun string if call
+		return "welcome world";		
+	}
+}
+
+echo myobj::MYNAME;					// print constant out class with class name
+echo $main::MYNAME;					// print constant out class with object name
+
+$main = new myobj();				// get
+
+$main->funName("abdou", 34);		
+
+class secObj extends myObj {
+	//
+}
+final class namClass { 			// cant inherit this class
+	//
+}
+
+abstract class abstrClass {        // can't creat object from, but make to inherit from other class
+	abstract public function sayHello();
+}
+class className extends abstrClass {
+	sayHello(){			//myst be declair abstract function
+		
+	}
+}
 ===== My SQL ==========
 
 
 $dsn = "mysql:host=localhost;dbname=abdou";
 $user = "root";
-$pass = "";
+$pass = ""; 
 
 $conect = new PDO($dsn, $user, $pass);
 mysql -u root -p password			// run to the my sql file(xampp/mysql/bin)
@@ -643,9 +714,10 @@ mysql -u root -p password			// run to the my sql file(xampp/mysql/bin)
 
 === connertion PDO to mySQL
 
- $dsn = "mysql:host=localhost;dbname=shop";
+	$dsn  = "mysql:host=localhost;dbname=shop";
     $user = "root";
     $pass = "";
+	
     $option = array(
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
     );

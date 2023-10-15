@@ -11,6 +11,8 @@ element.setProperty('prop', 'val')
 
 patern="^((?=.*\d)(?=.*[^0-9]).{8,32})" 	// patern for password
 
+let value = Object.assign({},data);		// make copy of object 
+
 ------------keyword JavaScript------------------
 
    break	       Terminates a switch or a loop
@@ -58,7 +60,7 @@ patern="^((?=.*\d)(?=.*[^0-9]).{8,32})" 	// patern for password
 
    var.slice(start, end)     extracts a part of a string    not inclouding the end
    var.slice(start)           extracts the star and all the rest
-   var.substring(start, end)   same as slice and not include negative value and returned 0
+   var.sub(start, end)   same as slice and not include negative value and returned 0
    var.substr(start, length)  the second parameter specifies the length of the extracted part.
 
    var.repeat(x)        repeat the var string x times
@@ -79,7 +81,7 @@ patern="^((?=.*\d)(?=.*[^0-9]).{8,32})" 	// patern for password
                /Microsoft/i     insensitive for UpperCase or LowerCase
                /Microsoft/g     replace all value in the string
 
------- RegExp --------
+------ RegExp or regular --------
 
    .search("")          searching whith out the powerful the value return the position
            or /  /i     insensitive for UpperCase or LowerCase
@@ -90,16 +92,21 @@ patern="^((?=.*\d)(?=.*[^0-9]).{8,32})" 	// patern for password
 
 
 
-   .match( char )       search for the char and return array 
+   .match( char )       search for the char and return array
+
+	
+		Modifires	
            /  /i     	Perform case-insensitive matching
            /  /g        Perform a global matching to the end
            /  /m        Perform multiline matching
 
            /[abc]/g	Find any of the characters between the brackets	
            /[0-9]/g	Find any of the digits between the brackets	
+		   /[^0-3]/g  Find all is not [ 0, 1, 2, 3]
+		   
            /(x|y)/g	Find any of the alternatives separated with 
            /\uxxxx/g	Find the Unicode character specified by the hexadecimal number xxxx
-           /[^0-9]/g  Find all is not in range 0-9
+           
 
            n+	  define quantities, Matches any string that contains at least one n
            n{2}  define quantities, Matches any string that contains 2 n
@@ -115,6 +122,9 @@ patern="^((?=.*\d)(?=.*[^0-9]).{8,32})" 	// patern for password
                           var result = patt1.exec(str);
                           document.write( result.index);
                         }
+
+		reg for password: /^(?=.*[a-zA-Z])(?=.*[0-9])([a-zA-Z0-9.?!@#$%^&*\-+=_,.?;:\'\\"\/]+)$/
+		ret for email: /^[\w\.]+@([\w-]+\.)+\w{2,4}$/
 
 ----------------number method---------------------
  
@@ -838,7 +848,7 @@ document.getElementById("demo").innerHTML = findMax(84, 5, 6, 77);
       condition 
       ? (do this if true)
       : (else condition 2 )
-      ? (do this if condition 2 is true )
+      g (do this if condition 2 is true )
       : (else condition 3)
       ? (do this if condition 3 is true)
       : (else do this if any one is don't true)
@@ -1284,7 +1294,7 @@ valid         	Set to true, if an element's value is valid.
         navigator.javaEnabled()   returns true if Java is enabled:
                         returns version information about the browser:
         
-         document.cookie("name=value; expires=Date; path=")
+         document.cookie = "name=value; expires=Date; path="
 
 
 ------------- localStarage ------------------------
