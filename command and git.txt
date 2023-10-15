@@ -42,7 +42,6 @@ pwd 						// show chain(url) of folder
 touch file.txt 				// creat new file.txt
 file file.txt 				// show infomatin 
 
-0791721027 delet 
 rm -r
 rm -i 			// confirm before deleat
 rm -d				// delet unique the empty 
@@ -99,7 +98,7 @@ useradd -m -G sudo,games.sami -s /bin/bash wafa
 		-m 				// add folder in Home
 		-G sudo,sami 	// add user to group (sudo,sami)
 		-s /bin/bash	// can to enter to system  
-		
+		f
 usermod -G games,sami abdou	// modefi groups of user abdou
 passwd sami 			// change password of sami user
 
@@ -143,7 +142,7 @@ pgp -o outFile fileEnc			//
 ----
 exit
 
-ssh -p 22 username@domain.com			// connect to server with ssh connect
+ssh username@domain.com	-p 22		// connect to server with ssh connect
 
 scp file2 abdou@domain.com:/home/u 		// send file to server whith ssh conect
 
@@ -172,7 +171,7 @@ alias 				// short of command
 whoami 			// show user
 
 
-ipconfig
+ifconfig
 tasklist
 systeminfo		//
 
@@ -211,7 +210,7 @@ history | grep "apt" 	// search of command apt
 
 bash file.sh 			// execuite shell file
 
-nmap 	192.168.1.0/24			// scan port open
+nmap 				// scan port open
 
 ufw status
 
@@ -324,9 +323,7 @@ git config --global --edit      // show config in editor
 
 ssh-keygen -t rsa -b 4096 -C "myEmail"      generat a public key 
 
-cat ~/.ssh/id_rsa.pub 						// show public key
-
-ssh -T git@github.com 						// test connect to serverad
+ssh -T git@github.com
 
 git config --global alias.st status     // short 'status' to 'st'
 git config --global alisas.st           // show the short of 'st'
@@ -381,40 +378,9 @@ git push origin v1.0   // push new tag in repo
 git push origin v1.0    // push deleted tag to github
 
 
-
-
-------- install apache & MySQL -----------
-
-apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
-
-mysql_secure_installation
-	= if error run cond in mysql
-		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
-
-romve anonymous user 		-> yes
-login remootely 			-> no
-remove test database 		-> yes
-reloade privilege tables 	-> yes
-
-enter to mysql:
-	mysql -u root -p
-	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
-	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
-	FLUSH PRIVILEGES
-
-update-rc.d apache2 disable/enable			// if start with system or not
-sudo systemctl disable apache2				//same as the top
-
-systemctl start apache2 mysql
-
-/etc/init.d/apache2 start			// start apache2 service
-
-
-
 ------ other commande -----------
 
 //set brave default borwser
 xdg-settings set default-web-browser brave-browser-beta.desktop
-
 
 

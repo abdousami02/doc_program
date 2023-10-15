@@ -3,7 +3,6 @@
 
 @csrf
 
--u sami -p Abdou123.
 
 ssh badnjhvi@66.29.141.209 -p 21098
 
@@ -21,9 +20,7 @@ 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
 127.0.0.1       admin.badnishop_local
 
 
-
 ***** XAMPP ************
-
 	How to setup a Virtual Host locally with XAMPP in Ubuntu:
 			https://ourcodeworld.com/articles/read/302/how-to-setup-a-virtual-host-locally-with-xampp-in-ubuntu	
 			
@@ -38,6 +35,7 @@ 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
 	3. Create your first virtual host
 		sudo nano /opt/lampp/etc/extra/httpd-vhosts.conf
 
+
 	<VirtualHost 127.0.0.1:80>
 	  DocumentRoot "/opt/lampp/htdocs/my-first-project"
 	  DirectoryIndex index.php
@@ -48,36 +46,15 @@ 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
 		Require all granted
 	  </Directory>
 	</VirtualHost>
-
-
-
---- show graphic panel of xampp ----
-
-sudo /opt/lampp/./manager-linux-x64.run
-sudo /opt/lampp/manager-linux-x64.run
+		
+		
  
-
- === version php ======
-
-sudo update-alternatives --set php /usr/bin/php7.3
-sudo a2dismod php8.1
-sudo a2enmod php7.3
-
-
 ========== laravel porject ===========
-
 export NODE_OPTIONS=--openssl-legacy-provider
 
-1- 	composer create-project laravel/laravel:^8.0 blog 	// recomended
+composer create-project laravel/laravel blog "8.*"
 
-		composer create-project laravel/laravel blog "8.*"
-
-		composer create-project --prefer-dist laravel/laravel blog "8cl.*"
-
-
-2-	php artisan key:generate				
-
-3- 	php artisan serve
+composer create-project --prefer-dist laravel/laravel blog "8cl.*"
 
 composer require laravel/ui:^3.0
 
@@ -103,7 +80,6 @@ edit "package.json" file
 	
 npm install
 npm run dev
-^(?=.*[0-9])(?=.*[A-Za-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$
 
 date("Y-m-d H:i:s");
 
@@ -111,7 +87,6 @@ date("Y-m-d H:i:s");
 ----- code for artisan --------------
 
 php artisan config:cache					// wher edit .env file
-php artisan cache:clear 
 
 php artisan storage:link
 
@@ -125,7 +100,7 @@ php artisan make:migration add_column_columnName --tableName		// edit column 202
 php artisan migrate:refresh --path=/database/migrations/fileName.php	// refresh special table
 
 php artisan make:model Product
-php artisan make:model Product -m				// creat migrat and model
+php artisan make:model Product -m		creat migrat and model
 
 php artisan make:controller ProductController
 
@@ -145,9 +120,6 @@ calc_price(prod, method){
 	return total.toFixed(2);
   }
 },
-
-
-
 	
 -------- model DataBase --------
 
