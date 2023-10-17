@@ -152,3 +152,10 @@ enter to mysql:
 	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 	FLUSH PRIVILEGES
 
+
+=========== switch version php ===========
+
+apt install php8.2 php8.2-cli php8.2-curl php8.2-xml
+
+sudo update-alternatives --set phar /usr/bin/php5.6
+

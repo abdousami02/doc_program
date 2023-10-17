@@ -40,3 +40,13 @@ unset varName 		// unset variable
 
 sleep 3 		// sleep 3 sec
 
+read -p "what is your name?: " name 
+read -t timeout 4 					// whit 4 sec for read input from user
+read -s  					// hide latter as a password
+
+read -t 5 -p "what is yout age? " name 			// whait 5s if is not input scape and contunieNN
+read -p "what is your full name " firstName lastName 		// accept two variable from user
+
+var1 var2 <<< $varg  		// separeat the $varg space (default)
+
+IFS=: 		// set separeator is :
