@@ -1,0 +1,3 @@
+
+======= programming ===========
+make code js for easy to send ajax from input
