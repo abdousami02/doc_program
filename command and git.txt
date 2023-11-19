@@ -140,8 +140,8 @@ useradd -m -G sudo,games.sami -s /bin/bash wafa
 		-G sudo,sami 	// add user to group (sudo,sami)
 		-s /bin/bash	// can to enter to system  
 		f
-usermod -G games,sami abdou	// modefi groups of user abdou
-passwd sami 			// change password of sami user
+usermod -G games,sami abdou			// modefi groups of user abdou
+passwd sami 										// change password of sami user
 
 cat /etc/passwd
 
@@ -337,7 +337,7 @@ git branch master           // and new branch 'master'
 git checkout master         // go the 'master' branch
 git checkout -b scroll      // creat new branch and go to it
 git branch -m master scroll // renam master to scroll
-git branch -d master        // delet 'master' branch if it is merged
+git branch -d master        // detlet 'master' branch if it is merged
 git branch -D master        // delet master branch
 
 
@@ -436,7 +436,25 @@ git push origin v1.0    // push deleted tag to github
 
 ------- install apache & MySQL -----------
 
+site : https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
 apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+
+// rewrite mode in apache2
+fil: /etc/apach2/mods-enabled/dir.conf
+edit this line :
+	<Directory /var/www>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+	or: 
+	<Directory /var/www>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Order allow,deny
+	    Allow from all
+	</Directory>
 
 mysql_secure_installation
 	= if error run cond in mysql

@@ -74,3 +74,42 @@ function pastText(e){
     }, 10);
 }
 
+
+***** Imgae function *************
+
+// function show image in DOM wheren uploaded:
+inpt.addEventListener('change',function(e){
+  console.log(e.target.files);
+
+  let file = e.target.files[0];     // set file input to $file variabe
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = el=>{
+    image.src = el.target.result        //set src of <img> in DOM value: el.target.result 
+  }
+
+// set value of input file to other input
+function () {
+
+  let container = new DataTransfer();
+  container.items.add(file);                          // $file is file object
+
+  document.querySelector('#file_input').files = container.files;
+}
+
+
+// download image from url and put it as input fil
+function loadURLToInputFiled(url){
+  getImgURL(url, (imgBlob)=>{
+    // Load img blob to input
+    // WIP: UTF8 character error
+    let fileName = 'hasFilename.jpg'
+    let file = new File([imgBlob], fileName,{type:"image/jpeg", lastModified:new Date().getTime()}, 'utf-8');
+    let container = new DataTransfer(); 
+    container.items.add(file);
+    document.querySelector('#file_input').files = container.files;
+    
+  })
+}
+
+

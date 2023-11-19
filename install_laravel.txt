@@ -63,6 +63,10 @@ calc_price(prod, method){
 					where('col', val)->update('col', val)
 					
 					
+======= websit exp =========
+
+diffrent with with(), has(), whereHas(): https://stackoverflow.com/questions/30231862/laravel-eloquent-has-with-wherehas-what-do-they-mean
+
 
 =============== Blade ====================
 
