@@ -62,7 +62,15 @@ calc_price(prod, method){
 					find()							// 
 					where('col', val)->update('col', val)
 					
-					
+----------- error storag permition ------
+
+sudo chown -R $USER:www-data storage
+sudo chown -R $USER:www-data bootstrap/cache
+
+		//then to set directory permission try this:
+
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
 
 =============== Blade ====================
 
@@ -137,3 +145,11 @@ cronjobs
 - Tabler
 - Ready dashboard
 - 
+
+
+=========== switch version php ===========
+
+apt install php8.2 php8.2-cli php8.2-curl php8.2-xml
+
+sudo update-alternatives --set phar /usr/bin/php5.6
+

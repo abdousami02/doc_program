@@ -251,6 +251,9 @@ history | grep "apt" 	// search of command apt
 
 bash file.sh 			// execuite shell file
 
+
+======== nmap =======
+
 nmap 				// scan port open
 
 ufw status
