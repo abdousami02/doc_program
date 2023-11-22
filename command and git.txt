@@ -22,6 +22,47 @@ site:php.net 			// retuern result just from php.net
  SS64.com
  
 
+ ========== v hosts ===========
+ /etc/hosts
+ /opt/lampp/etc/extra/httpd-vhosts.conf
+
+******* Apache **************
+127.0.0.1       shop_local
+127.0.0.1       badnitech_localgt
+127.0.0.1       test1_local
+127.0.0.1       badnishop_local
+192.168.8.101   badnishop_local
+127.0.0.1       admin.badnishop_local
+
+
+***** XAMPP ************
+	How to setup a Virtual Host locally with XAMPP in Ubuntu:
+			https://ourcodeworld.com/articles/read/302/how-to-setup-a-virtual-host-locally-with-xampp-in-ubuntu	
+			
+	1. Allow the usage of custom virtual hosts:
+		sudo nano /opt/lampp/etc/httpd.conf				// in line 467
+			# Virtual hosts
+			Include etc/extra/httpd-vhosts.conf
+			
+	2. Create a custom domain in the hosts file of your system:
+		sudo nano /etc/hosts
+
+	3. Create your first virtual host
+		sudo nano /opt/lampp/etc/extra/httpd-vhosts.conf
+
+
+	<VirtualHost 127.0.0.1:80>
+	  DocumentRoot "/opt/lampp/htdocs/my-first-project"
+	  DirectoryIndex index.php
+
+	  <Directory "/opt/lampp/htdocs/my-first-project">
+		Options All
+		AllowOverride All
+		Require all granted
+	  </Directory>
+	</VirtualHost>
+
+
 -------- Commend Line ----------
 
 cd 				// change deretory  that main folder
@@ -142,7 +183,6 @@ pgp -o outFile fileEnc			//
 ----
 exit
 
-ssh username@domain.com	-p 22		// connect to server with ssh connect
 
 scp file2 abdou@domain.com:/home/u 		// send file to server whith ssh conect
 
@@ -201,6 +241,7 @@ du -s				// show size of directory
 w 					// show user connet in system
 who					// same (w) but small info
 
+netstat -tulnp 			// show port
 
 crontab 			// serch it
 
@@ -221,11 +262,26 @@ ufw status
 
 apt full-upgrade
 
+pkill -u username 		// kill all service for username
+
 ----- apt ---------
 apt search 
 
 sudo dpkg -i <namePackage>			// install package has download
 wget <linkOfPackage>				// download package from web
+
+
+=========== ssh ==================
+ssh badnjhvi@66.29.141.209 -p 21098
+
+ssh username@domain.com	-p 22		// connect to server with ssh connect
+
+sudo apt-get install openssh-client openssh-server
+
+ssh-keygen -t rsa -f /etc/ssh/shh_host_rsa_key
+ssh-keygen -t dsa -f /etc/ssh/shh_host_rsa_key
+
+
 
 -------- cmd ------------
 
@@ -427,6 +483,27 @@ git tag -d v0.1        // delet tag v0.1 in locar
 
 git push origin v1.0   // push new tag in repo
 git push origin v1.0    // push deleted tag to github
+
+
+------- install apache & MySQL -----------
+
+apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+
+mysql_secure_installation
+	= if error run cond in mysql
+		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
+
+romve anonymous user 		-> yes
+login remootely 			-> no
+remove test database 		-> yes
+reloade privilege tables 	-> yes
+
+enter to mysql:
+	mysql -u root -p
+	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
+	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+	FLUSH PRIVILEGES
+
 
 
 ------ other commande -----------

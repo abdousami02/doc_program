@@ -1,51 +1,24 @@
 
 
-// validate request and return error if fail
-$req->validate([
-  'title' => 'required | string ',
-  'date'  => 'required | date',
-  'location'  => 'required | string',
-  'description'=> 'required | string',
-]);
 
+=======================
 
-// show all errors
-@if ($errors->any())
-<div class="alert alert-danger">
-  <ul>
-    @foreach ($errors->all() as $error)
-    <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-</div>
-@endif
-
-
-
-// show error alert
-@error('tilte')
-	<span class="invalid-feedback" role="alert">
-	  <strong>{{ $message }}</strong>
-	</span>
-@enderror
-
-
-
-// construct function
-public function __construct()
-  {
-      $this->middleware('auth');
-  }
- }
-
-
-retrun back()->with('success', 'message')
-
-@if(session('success'))
-@endif
-
-
-cronjobs
-
-
+"devDependencies": {
+        "@popperjs/core": "^2.10.2",
+        "axios": "^0.21",
+        "bootstrap": "^5.2.3",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "vue": "^3.2.36",
+        "vue-template-compiler": "^2.7.10",
+        "vue-router": "^4.1.6",
+        "vuex": "^4.0.0"
+    }
+  
+npm install
+npm run dev
 
