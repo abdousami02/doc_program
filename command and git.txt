@@ -1,4 +1,5 @@
 
+sudo shutdown -P +60 		// shutdown after 60min
 ----- for VS Code ---------
 
 clt + D
@@ -79,6 +80,8 @@ mkdir ..\test				// creat foldr in back parent of folder
 mkdir -p images/phone/famile 	// make tree of folder 
 
 pwd 						// show chain(url) of folder
+
+nautilus --browser ./ 	// open this folder with file browser
 
 touch file.txt 				// creat new file.txt
 file file.txt 				// show infomatin 
@@ -251,6 +254,7 @@ history | grep "apt" 	// search of command apt
 
 bash file.sh 			// execuite shell file
 
+php -i | grep extension_dir				// get extension dir path
 
 ======== nmap =======
 
@@ -276,10 +280,16 @@ ssh username@domain.com	-p 22		// connect to server with ssh connect
 
 sudo apt-get install openssh-client openssh-server
 
+-- generate public key
 ssh-keygen -t rsa -f /etc/ssh/shh_host_rsa_key
-ssh-keygen -t dsa -f /etc/ssh/shh_host_rsa_key
+ssh-keygen -t rsa -b 2048
 
+-- copy my public key to server
+ssh-copy-id <username>@<hostname_or_ip> -p <port>
 
+- or copy publickey to path '~/.ssh/authorized_keys'    created if not exist
+
+ssh -T <username>@<hostname_or_ip> -p <port>
 
 -------- cmd ------------
 
@@ -364,7 +374,13 @@ git config -l                   // show all configaration
 git config --global user.name ""
 git config --global user.email ""
 
-git config --global --edit      // show config in editor
+git config --global --edit      	// show config in editor
+
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+git config --global --unset-all 	// delete account
+
 
 
 [color "status"]
@@ -375,6 +391,8 @@ git config --global --edit      // show config in editor
 [color "branch"]
 	remote = yellow
 
+--diffrant not commit
+git diff --cached <fileName>
 
 
 ----- public key ----------
@@ -440,6 +458,7 @@ git push origin v1.0    // push deleted tag to github
 ------- install apache & MySQL -----------
 
 apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+sudo apt install libapache2-mod-php8.2
 
 mysql_secure_installation
 	= if error run cond in mysql

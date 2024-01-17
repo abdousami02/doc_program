@@ -336,9 +336,9 @@ $('element').css("property","value");
 		password:	// For Authentication
 		contentType: 'multipart/from-data' // content Type for the Request, dufault is 'application/x-from-urlencoded'
 		
-			type:		// method used for the Request if you're using versions of jQuery befor to 1.9.0.
+		type:		// method used for the Request if you're using versions of jQuery befor to 1.9.0.
 		method:  	// method used for the Request not
-		utl:   	 	// URL to send the Request dufault is current url
+		url:   	 	// URL to send the Request dufault is current url
 		data:    	// data To send withe request
 		
 		beforSend: function(xhr){ } 				  // Function run befor Request is send
