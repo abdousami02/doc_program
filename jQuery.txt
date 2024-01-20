@@ -1,4 +1,6 @@
 
+console.log(jQuery.fn.jquery) 		// get version of jquery
+
 $(document).ready(function(){   //code   })  // do th function on the windows loade
 $(function(){  // code })     // do th function on the windows loade
 

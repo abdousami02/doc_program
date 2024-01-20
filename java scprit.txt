@@ -213,8 +213,8 @@ let value = Object.assign({},data);		// make copy of object
    .shift();        removes the first array element and "shifts" all other elements to a lower index. and returns the string that was "shifted out":
    delete var[n];         delet an element
 
-   .slice(x,y)   slice elements star index x and finish in y ,    and don't modifi the array
-   .slice(x)     slice elements star index x and finish in the last index    don't modifi the array
+   .slice(x,y)   select elements star index x and finish in y ,    and don't modifi the array
+   .slice(x)     select elements star index x and finish in the last index    don't modifi the array
 
    .concat(var2,var4)     creates a new array by merging (concatenating) existing arrays:  // var3 = var1.concat()
    .concat(["x" , "y" , "z" , "a"])                                                        // var3 = var1.concat()
