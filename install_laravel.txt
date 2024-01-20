@@ -153,3 +153,72 @@ apt install php8.2 php8.2-cli php8.2-curl php8.2-xml
 
 sudo update-alternatives --set phar /usr/bin/php5.6
 
+
+========= change lang ==========
+set Franch Time:
+
+    setlocale(LC_TIME, 'fr_FR');
+    date_default_timezone_set('Europe/Paris');
+    dd(utf8_encode(strftime('%A %d %B %Y, %H:%M')));
+
+
+pagination : 
+
+  @if ($paginator->hasPages())
+    <div class="tm-pagination mt-50">
+        <ul>
+            @if (!$paginator->onFirstPage())
+                <li><a href="{{ $paginator->previousPageUrl() }}"><i class="ion-chevron-left"></i></a></li>
+            @endif
+
+            @foreach ($elements as $element)
+                @if (is_string($element))
+                    <li><span>...</span></li>
+                @endif
+
+                {{-- Array Of Links --}}
+                @if (is_array($element))
+                    @foreach ($element as $page => $url)
+                        @if ($page == $paginator->currentPage())
+                            <li class="is-active"><a href="#">{{ $page }}</a></li>
+                        @else
+                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        @endif
+                    @endforeach
+                @endif
+            @endforeach
+
+            @if ($paginator->hasMorePages())
+                <li><a href="{{ $paginator->nextPageUrl() }}"><i class="ion-chevron-right"></i></a></li>
+            @endif
+        </ul>
+    </div>
+@endif
+
+
+==============
+Paginator::defaultView('client.includes.pagination');
+ 
+            Paginator::defaultSimpleView('client.includes.pagination');d
+
+=======================
+
+"devDependencies": {
+        "@popperjs/core": "^2.10.2",
+        "axios": "^0.21",
+        "bootstrap": "^5.2.3",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "vue": "^3.2.36",
+        "vue-template-compiler": "^2.7.10",
+        "vue-router": "^4.1.6",
+        "vuex": "^4.0.0"
+    }
+  
+npm install
+npm run dev
+
