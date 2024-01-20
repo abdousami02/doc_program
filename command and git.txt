@@ -206,6 +206,8 @@ cat main.css | grep "float" 	// find "float" in main.css file
 clt + c 			// stop all 
 alias 				// short of command
 
+subl ~/.bashrc 				// alias fild to make alias
+
   && 				// for do two comande in one line
 
 whoami 			// show user
@@ -250,6 +252,9 @@ history 			// show all history of command
 history | grep "apt" 	// search of command apt
 
 bash file.sh 			// execuite shell file
+
+
+======== nmap =======
 
 nmap 				// scan port open
 
@@ -300,14 +305,60 @@ df -h
 du -h 					// size of special file
 du -sh
 
+
+===== apache mysql ==============
 update-rc.d apache2 disable/enable			// if start with system or not
 sudo systemctl disable apache2				//same as the top
 
 systemctl start apache2 mysql
 
 /etc/init.d/apache2 start			// start apache2 service
+curl http://icanhazip.com 	// get my ip address
+
+update-rc.d apache2 enable 		// start pardefault
+
+-------- install mysql -------------
+
+link: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04
+
+ - sudo apt update
+ - sudo apt install mysql-server
+ - sudo service mysql start
+ - sudo mysql
+ - ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ - exit
+ - mysql -u root -p					// to login into database
+
+if you want to install mysql_secure_installation:
+ - sudo mysql_secure_installation
 
 
+----- delete mysql final ------------
+
+sudo -i
+service mysql stop
+killall -KILL mysql mysqld_safe mysqld
+apt-get --yes purge mysql*
+apt-get --yes autoremove --purge
+apt-get autoclean
+deluser --remove-home mysql
+delgroup mysql
+rm -rf /etc/apparmor.d/abstractions/mysql /etc/apparmor.d/cache/usr.sbin.mysqld /etc/mysql /var/lib/mysql /var/log/mysql* /var/log/upstart/mysql.log* /var/run/mysqld ~/.mysql_history
+updatedb
+
+--------- error mysql ---------------
+
+- sudo mysql -p -u root
+
+Then go to config.inc.php ( in ubuntu, /etc/phpmyadmin/config.inc.php )
+
+/* User for advanced features */
+
+$cfg['Servers'][$i]['controluser'] = 'root'; 
+$cfg['Servers'][$i]['controlpass'] = 'password_here';
+
+add in the last:
+$cfg['SendErrorReports'] = 'never';
 
 ============= git =====================
 
