@@ -1,6 +1,15 @@
+***** Nodejs ****
+
+sudo apt-get install nodejs
+sudo apt-get installl npm
+
+-- for laste version
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable || sudo n latest // for last version
+
+
 **** Sass **********
-
-
 
 sass main.scss:main.css
 
