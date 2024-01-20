@@ -1,0 +1,21 @@
+print('hello word') 		// print output
+input("what is your name")  // input in terminal
+name = input('entry age')   // make input in variable
+
+int(var) 		// make the string to integer
+float(var) 		// make float
+bool(var)
+str(var)
+
+var.find('str') 				// find position of first resulte
+var.replace(oldstr, newstr)   	// replace
+print('python' in course) 		// if string is existe 
+print(10 > 4 and 3 < 4) 		// and is &  , or is || , not is ! 
+
+if var > 30:
+	print('do this done')
+
+elif var < 30:
+	print('or do this')
+
+
