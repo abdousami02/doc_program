@@ -1,3 +1,129 @@
+
+***** XAMPP ************
+	How to setup a Virtual Host locally with XAMPP in Ubuntu:
+			https://ourcodeworld.com/articles/read/302/how-to-setup-a-virtual-host-locally-with-xampp-in-ubuntu	
+			
+	1. Allow the usage of custom virtual hosts:
+		sudo nano /opt/lampp/etc/httpd.conf				// in line 467
+			# Virtual hosts
+			Include etc/extra/httpd-vhosts.conf
+			
+	2. Create a custom domain in the hosts file of your system:
+		sudo nano /etc/hosts
+
+	3. Create your first virtual host
+		sudo nano /opt/lampp/etc/extra/httpd-vhosts.conf
+
+
+	<VirtualHost 127.0.0.1:80>
+	  DocumentRoot "/opt/lampp/htdocs/my-first-project"
+	  DirectoryIndex index.php
+
+	  <Directory "/opt/lampp/htdocs/my-first-project">
+		Options All
+		AllowOverride All
+		Require all granted
+	  </Directory>
+	</VirtualHost>
+
+
+===== apache mysql ==============
+
+update-rc.d apache2 disable/enable			// if start with system (OS) or not
+sudo systemctl disable apache2				//same as the top start with system (OS)
+
+systemctl start apache2 mysql
+
+/etc/init.d/apache2 start			// start apache2 service
+curl http://icanhazip.com 	// get my ip address
+
+
+-------- install mysql -------------
+
+link: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04
+
+ - sudo apt update
+ - sudo apt install mysql-server
+ - sudo service mysql start
+ - sudo mysql
+ - ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ - exit
+ - mysql -u root -p					// to login into database
+
+if you want to install mysql_secure_installation:
+ - sudo mysql_secure_installation
+
+
+----- delete mysql final ------------
+
+sudo -i
+service mysql stop
+killall -KILL mysql mysqld_safe mysqld
+apt-get --yes purge mysql*
+apt-get --yes autoremove --purge
+apt-get autoclean
+deluser --remove-home mysql
+delgroup mysql
+rm -rf /etc/apparmor.d/abstractions/mysql /etc/apparmor.d/cache/usr.sbin.mysqld /etc/mysql /var/lib/mysql /var/log/mysql* /var/log/upstart/mysql.log* /var/run/mysqld ~/.mysql_history
+updatedb
+
+--------- error mysql ---------------
+
+- sudo mysql -p -u root
+
+Then go to config.inc.php ( in ubuntu, /etc/phpmyadmin/config.inc.php )
+
+/* User for advanced features */
+
+$cfg['Servers'][$i]['controluser'] = 'root'; 
+$cfg['Servers'][$i]['controlpass'] = 'password_here';
+
+add in the last:
+$cfg['SendErrorReports'] = 'never';
+
+
+
+
+------- install apache & MySQL -----------
+
+site : https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
+apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+sudo apt install libapache2-mod-php8.2
+
+// rewrite mode in apache2
+fil: /etc/apach2/mods-enabled/dir.conf
+edit this line :
+	<Directory /var/www>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+	or: 
+	<Directory /var/www>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Order allow,deny
+	    Allow from all
+	</Directory>
+
+mysql_secure_installation
+	= if error run cond in mysql
+		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
+
+romve anonymous user 		-> yes
+login remootely 			-> no
+remove test database 		-> yes
+reloade privilege tables 	-> yes
+
+enter to mysql:
+	mysql -u root -p
+	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
+	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+	FLUSH PRIVILEGES
+
+
+
 ***** Nodejs ****
 
 sudo apt-get install nodejs
