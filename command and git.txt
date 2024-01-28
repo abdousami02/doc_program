@@ -397,6 +397,8 @@ git branch
 git branch master           // and new branch 'master'
 git checkout master         // go the 'master' branch
 git checkout -b scroll      // creat new branch and go to it
+
+git branch -M home 					// rename brach to home
 git branch -m master scroll // renam master to scroll
 git branch -d master        // detlet 'master' branch if it is merged
 git branch -D master        // delet master branch

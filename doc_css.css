@@ -1,18 +1,26 @@
 
+/* -- uintes --
+
 1em = 60px
 
+*/
 
-fire {text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70, 0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
-color: #ffe;}
-neone { text-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 0 0 0.4em #f7f,
-0 0 0.6em #f0f, 0 0 0.8em #f0f, 0 0 1.0em #f0f, 0 0 1.2em #f0f;
-color: #fff;}
+/*text-shadow*/
+fire {
+	text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70, 0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+	color: #ffe;}
+
+/*other-shadow*/
+neone { 
+	text-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 0 0 0.4em #f7f,0 0 0.6em #f0f, 0 0 0.8em #f0f, 0 0 1.0em #f0f, 0 0 1.2em #f0f;
+	color: #fff;}
 
 class="font-effect-neon" (link styl:<link rel="stylesheet" 
 href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">)
 
-========= Best Font family css ==========
 
+/*
+========= Best Font family css ==========
     Arial (sans-serif)
     Verdana (sans-serif)
     Helvetica (sans-serif)
@@ -25,22 +33,21 @@ href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|s
     Brush Script MT (cursive)
 
 'Freight Sans Bold'
+*/
 ------------
 
-/*
-/* nice scrolle
-/*
+/* =========
+** nice scrolle
+*/
 
 .simplebar-content-wrapper::-webkit-scrollbar,
 .simplebar-hide-scrollbar::-webkit-scrollbar{
-	display:none
-}
+	display:none}
 
 .simplebar-content:after,
 .simplebar-content:before{
 	content:" ";
-	display:table
-}
+	display:table}
 
 .simplebar-scrollbar{
 	position:absolute;
@@ -76,9 +83,9 @@ href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|s
 }
 .simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px}[data-simplebar-direction=rtl] .simplebar-track.simplebar-vertical{right:auto;left:0}.hs-dummy-scrollbar-size{direction:rtl;position:fixed;opacity:0;visibility:hidden;height:500px;width:500px;overflow-y:hidden;overflow-x:scroll}
 .simplebar-hide-scrollbar{
-position:fixed;left:0;
-visibility:hidden;overflow-y:scroll;
-scrollbar-width:none}
+	position:fixed;left:0;
+	visibility:hidden;overflow-y:scroll;
+	scrollbar-width:none}
 
 .custom-scroll{height:100%}
 
@@ -90,13 +97,12 @@ scrollbar-width:none}
 
 /*
 /* limit line of paragraph
-/*
-	{
-	  overflow: hidden;
-	  display: -webkit-box;
-	  -webkit-line-clamp: 3;
-	  -webkit-box-orient: vertical;
-	  max-height: 70px;
-	}
+*/
+.limit-lin {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-height: 70px; }
 	
 

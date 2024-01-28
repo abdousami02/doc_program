@@ -1,0 +1,58 @@
+
+<script>
+/* =======
+** Sort Table
+** documentaion: https://github.com/SortableJS/Sortable
+*/
+  var el = document.getElementById('avantage-list');
+  var sortable = Sortable.create(el,{
+    dataIdAttr: 'data-id',    // // HTML attribute that is used by the `toArray()` method
+    swap: true,       // Enable swap plugin
+    swapClass: 'highlight', // The class applied to the hovered swap item
+    animation: 150
+  });
+
+  var order = sortable.toArray();
+  sortable.sort(order.reverse(), true); // apply
+  
+</script>
+
+<!-- 
+**
+** Trick & Trips
+**
+** 
+-->
+
+<script>
+/* ======
+** add item to ul list on click 'enter'
+*/
+$('#input-add').keypress(function(e){
+  if(e.which == 13){
+    e.preventDefault();
+    $('#list').append('HTML CODE');   // add HTML CODE to list
+    e.target.vaule = '';              // emty input
+  }
+});
+</script>
+
+
+
+<script>
+/* ========
+** past plain text
+*/ 
+function pastText(e){
+  var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+    e.preventDefault();
+    // Firefox fix
+    setTimeout(function () {
+        document.execCommand('insertText', false, bufferText);
+    }, 10);
+}
+</script>
+
+
+
+
