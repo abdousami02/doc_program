@@ -1,0 +1,124 @@
+
+============= git =====================
+
+git init						// initilise new repo on this directory
+
+git remote add origin [https]  		// add locla branch to github 
+
+
+git clone [https]   			// download the repsetry in this folder
+git add  <nameFile>				// add file in staging area
+git status
+git commit -m "comant"
+
+git restore --staged <path>   			// remove form stage area
+git reset head <nameF> 					// deleat folder from staging area
+
+git restore  <path>       						// ignord the new changed in the file
+git restore --source <commit source> <path>  	// reset special version
+git rm
+
+
+git branch
+git branch master           // and new branch 'master'
+git checkout master         // go the 'master' branch
+git checkout -b scroll      // creat new branch and go to it
+
+git branch -M home 					// rename brach to home
+git branch -m master scroll // renam master to scroll
+git branch -d master        // detlet 'master' branch if it is merged
+git branch -D master        // delet master branch
+
+
+git merge master        // merge(groNNup) master branch to main branch
+
+git remote -v   		// get the remot name
+
+
+git remote set-url origin git@github.com:abdousami02/shop.git		// change to ssh 
+
+ssh-keygen -t ecdsa -b 521 -C "your_email@example.com"
+
+git push -u RemotName branchName    // pull and push
+git push RemotName branchName
+
+git pull			// don two something fetch and merge
+git fetch
+
+git config -l                   // show all configaration
+
+git config --global user.name ""
+git config --global user.email ""
+
+git config --global --edit      	// show config in editor
+
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+git config --global --unset-all 	// delete account
+
+
+git config --global alias.st status     // short 'status' to 'st'
+git config --global alisas.st           // show the short of 'st'
+
+git log         // show all commit
+git log -p      // show modification commit and don't show the commit not modifi
+
+
+git diff --cached <fileName>  	// diffrant not commit
+
+git remote add origin git@github.com:abdousami02/badnitech.git
+git push -u origin main
+
+
+** stash **
+
+git stash     // hide folder added in box  (the file is not commit)
+git stash list    // show list of hidden file
+git stash pop     // unhide the last
+git stash pop stash@{2}  // show the stash number 2
+git stash apply   // unhide copy of origin stash
+git stash -u                // --include-untracked
+git stash -a                // include ignord file
+git stash -- test.txt test2.txt       // include just test.txt 
+
+git stash save "addTextHier"   // add comment for all stash file
+git stash push -m "messag" test.txt test2.txt    // stash special file or folder
+
+git stash drop stash@{2} // delet the stash 2 or the last if not write stash@{}
+git stash show stash@{2} // show the file inside the stash not for stashed from untracked file 
+git stash clear           // delet all stash
+
+git clean -n      // show the file untraked and while remove
+git clean -f      // delet the file is untraked
+
+git stash branch name-new-branch stash@{1}     //Creating a branch from stash
+
+******
+
+git reset --hard <source-commit>   // return in special source commi and delet modifi
+git reset --hard HEAD~1           // return back in last commit and delet modifi
+
+git reset --soft HEAD~1           // return back into last commit and not delet 
+git reset --soft <source-commit>  // return in special source commit and not delet
+
+
+** tag **
+git tag         // show tag
+git tag v1.0    // add new tag
+git tag -a v1.1 -m "discription of tag"   // add new tag with description
+git tag -d v0.1        // delet tag v0.1 in locar
+
+git push origin v1.0   // push new tag in repo
+git push origin v1.0    // push deleted tag to github
+
+
+[color "status"]
+	added = yellow
+	changed = red bold
+	untracked = magenta bold
+	
+[color "branch"]
+	remote = yellow
+
+
