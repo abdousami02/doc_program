@@ -1,24 +1,47 @@
 
 sudo shutdown -P +60 		// shutdown after 60min
------ for VS Code ---------
 
-clt + D
-Alt + up down
-shift + Alt + up down
-ctrl + /        
-ctrl + shift + T
+------ for VS Code ---------
+
+alt + up down 			// move the line to up or down
+alt  + z 				// wrap-text
+
+ctrl + shift + T 		// return to perv tab
+
+ctrl + /        		// commit the line
+ctr  + D
+ctr + h       // replace text with anthor text
+
+
 ul>li*5
-Alt + Tab     scroll in window
 
-ctrl + h       // replace text with anthor text
 
-+
+------ for nano -----------
 
 Alt + shift + # 		// show line in nano
+
+
+----- for sublime text ------
+
+shift + Alt + up down 			// move the line to up or down
+
+
+----- for linux -----------
+
+Alt + Tab     scroll in window
+
+sudo dpkg --configure -a
+sudo --fix-broken install
+
+sudo dpkg -i <packageName> 			// install package .deb
+hostname -I 				// show local ip address
+curl http://icanhazip.com  // show ip address global
+
+
+
 -----google Search 
 
 site:php.net 			// retuern result just from php.net
-
 
  SS64.com
  
@@ -37,8 +60,22 @@ site:php.net 			// retuern result just from php.net
 
 
 
-
 -------- Commend Line ----------
+
+hostnamectl 			// linux version
+lsb_release -a
+cat /etc/os-release 
+cat /etc/issue
+cat /etc/*release
+cat /proc/version
+uname -a 						// Prints all system information
+$ uname -a
+	Linux abdou-Latitude-5591 5.15.0-89-generic #99~20.04.1-Ubuntu SMP Thu Nov 2 15:16:47 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+	abdou@abdou-Latitude-5591:~/Downloads/node-v20.11.0-linux-x64/lib/node_modules$ uname -r
+	5.15.0-89-generic
+
+
+
 
 cd 				// change deretory  that main folder
 cd ..			// go back
@@ -61,7 +98,9 @@ touch file.txt 				// creat new file.txt
 file file.txt 				// show infomatin 
 
 rm -r
+rm -rf
 rm -i 			// confirm before deleat
+
 rm -d				// delet unique the empty 
 rmdir 			// delet emty folder
 
@@ -99,16 +138,35 @@ tail file.txt 				// show last 10 line in file
 tail -n 5 file.txt		//  show last 5 line
 
 tar zcvf imag.tar.gz images 		// compress images folder to imag.tar.gz
-tar zxvf imag.tar.gz 					// extract file
-unzip file.zip						// extract zip file
 
+tar zxvf imag.tar.gz 					// extract file
+tar -xf  file.tar.xz
+tar -xvf imag.tar.xz
+xz -d -v filename.tar.xz
+gzip -dc filename.tar.gz | tar xf -
+
+tar -xf filename.tar.xz -C /path-to-extract  	// extract to special folder
+tar -xf filename.tar.xz file1   						  // extract special file
+
+unzip file.zip						// extract zip file
+gzip -dc filename.tar.gz 
+
+
+----- groups --------
+
+cat /etc/group 				// show groups
+getent group 				show all groups
+
+getent group | grep nameGroup 		// find group info
+
+groups  abdou				// show groups of abdou
 
 addgroup nameGroup			// add group
 delgroup nameGroup			// delet group
-groupmod nameGroup -n newname oldname 		// modefie name group
+groupmod nameGroup -n newname oldname 		// modefie rename name group
 
-cat /etc/group 				// show groups
-getent group | grep nameGroup 		// find group info
+
+------ users ------------
 
 adduser nameUser 			// add user to system
 useradd nameUser			// add user but not for 
@@ -118,15 +176,16 @@ useradd -m -G sudo,games.sami -s /bin/bash wafa
 		-s /bin/bash	// can to enter to system  
 		f
 usermod -G games,sami abdou			// modefi groups of user abdou
+
 passwd sami 										// change password of sami user
 
 cat /etc/passwd
 
 userdel						// delet just user not Group and folder
-userdel -r 				// delet user and all think about it
+userdel -r 					// delet user and all think about it
 
-groups  abdou				// show groups of abdou
-gpasswd -a sami abdou			// add sami (user) to (group) abdou
+
+gpasswd -a sami abdouGroup			// add sami (user) to (group) abdou
 
 chmod				// change premition
 		r - read:  4
@@ -152,6 +211,8 @@ chmod 755 -R dirName		// change permition of file and content of directory
 
 file nameFile 				// show type of file
 
+
+----- encripte ---------
 gpg -c nameFile 			// sucrite file
 gpg -o outFile -c nameFile 		// sucrit file and the name is outFile
 gpg -o outFile -c --cipher-algo AES256 	nameFile	// cipher file with algo AES256
@@ -244,10 +305,11 @@ apt full-upgrade
 pkill -u username 		// kill all service for username
 
 ----- apt ---------
+
 apt search 
 
 sudo dpkg -i <namePackage>			// install package has download
-wget <linkOfPackage>				// download package from web
+wget <linkOfPackage>						// download package from web
 
 
 =========== ssh ==================
@@ -295,4 +357,18 @@ move test testing 	// rename the test folder to testing
 //set brave default borwser
 xdg-settings set default-web-browser brave-browser-beta.desktop
 
+
+---- speed test ---------
+sudo apt install speedtest-cli 		// test speed test network
+		speedtest
+
+sudo apt install iperf 				// for test speed  with two pc or server
+		iperf -s  	// in current machine 
+		iperf -c [server_IP]   // in other machine
+
+sudo apt install nload 				// best for test speed network currently
+			nload enp0s3
+
+sudo apt install iftop 			// show service speed test network
+		sudo iftop -i <nameNetwork>
 
