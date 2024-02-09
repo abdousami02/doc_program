@@ -27,15 +27,56 @@
 	</VirtualHost>
 
 
+
+------- install apache & MySQL -----------
+
+install lib php8.2
+- sudo apt update
+- sudo apt install -y lsb-release gnupg2 ca-certificates apt-transport-https software-properties-common
+- sudo add-apt-repository ppa:ondrej/php
+- sudo apt update
+
+site : https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
+
+apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+
+sudo apt install php8.2 php8.2-cli php8.2-{curl,mbstring,intl,gd,xml,zip,mysql} // also {bcmath, common}
+sudo apt install php8.2-fpm
+
+sudo apt install libapache2-mod-php8.2
+
+// rewrite mode in apache2
+
+fil: /etc/apache2/mods-enabled/dir.conf
+edit this line :
+	<Directory /var/www>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Require all granted
+	</Directory>
+
+	or: 
+	<Directory /var/www>
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Order allow,deny
+	    Allow from all
+	</Directory>
+
+sudo a2enmod rewrite
+
+
 ===== apache mysql ==============
 
-update-rc.d apache2 disable/enable			// if start with system (OS) or not
+update-rc.d apache2 disable/enable			// if start with system (OS) or not default
 sudo systemctl disable apache2				//same as the top start with system (OS)
 
 systemctl start apache2 mysql
 
 /etc/init.d/apache2 start			// start apache2 service
-curl http://icanhazip.com 	// get my ip address
+curl http://icanhazip.com 			// get my ip address
+
+sudo apt install net-tools
 
 
 -------- install mysql -------------
@@ -53,6 +94,30 @@ link: https://www.digitalocean.com/community/tutorials/how-to-install-linux-apac
 if you want to install mysql_secure_installation:
  - sudo mysql_secure_installation
 
+mysql_secure_installation
+	= if error run cond in mysql
+		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
+
+romve anonymous user 		-> yes
+login remootely 			-> no
+remove test database 		-> yes
+reloade privilege tables 	-> yes
+
+enter to mysql:
+	mysql -u root -p
+	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
+	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+	FLUSH PRIVILEGES
+
+
+If you get a 404 error upon visiting http://localhost/phpmyadmin: You will need to configure apache2.conf to work with Phpmyadmin.
+
+sudo subl /etc/apache2/apache2.conf
+Include the following line at the bottom of the file, save and quit:
+ - Include /etc/phpmyadmin/apache.conf
+
+
+$ Include /etc/phpmyadmin/apache.conf
 
 ----- delete mysql final ------------
 
@@ -84,48 +149,27 @@ $cfg['SendErrorReports'] = 'never';
 
 
 
-------- install apache & MySQL -----------
-
-site : https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
-apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
-sudo apt install libapache2-mod-php8.2
-
-// rewrite mode in apache2
-fil: /etc/apach2/mods-enabled/dir.conf
-edit this line :
-	<Directory /var/www>
-		Options Indexes FollowSymLinks
-		AllowOverride All
-		Require all granted
-	</Directory>
-
-	or: 
-	<Directory /var/www>
-		Options Indexes FollowSymLinks
-		AllowOverride All
-		Order allow,deny
-	    Allow from all
-	</Directory>
-
-mysql_secure_installation
-	= if error run cond in mysql
-		ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
-
-romve anonymous user 		-> yes
-login remootely 			-> no
-remove test database 		-> yes
-reloade privilege tables 	-> yes
-
-enter to mysql:
-	mysql -u root -p
-	CREAT USER 'admin'@'localhost' IDENTIFIED BY 'mypwd';
-	GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
-	FLUSH PRIVILEGES
-
 
 
 ***** Nodejs ****
 
+//link install
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+	source ~/.bashrc					// To use it, you must first source your .bashrc file:
+	nvm list-remote						// which versions of Node are available:
+	nvm install v14.10.0 			// install version
+	nvm list 									// the installed listing
+	nvm use v14.10.0 					// You can switch between installed versions with nvm use
+	nvm uninstall <node_version>
+
+
+	nvm install node
+	 		// install node and npm 
+
+----
 sudo apt-get install nodejs
 sudo apt-get installl npm
 
@@ -161,8 +205,20 @@ npm i --save-dev gulp 	// install gulp local in project
 npm i --save-dev gulp-concat
 
 
+
+-------- install android-studio ---------
+
+link: https://dev.to/janetmutua/installing-android-studio-on-ubuntu-2204-complete-guide-1kh8
+sudo apt install openjdk-18-jdk 		// install jdk 
+java --version 							// show jdk version
+
+sudo add-apt-repository ppa:maarten-fonville/android-studio 	// add reposetry
+sudo apt install android-studio -y
+
+
 --------- ionic -------------
 npm install @ionic/pwa-elements
+
 
 ionic start
 
@@ -172,5 +228,7 @@ ionic cap add android
 
 ionic cap open ios
 ionic cap open android
+
+ionic cap sync
 
 
