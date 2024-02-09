@@ -205,6 +205,7 @@ npm i --save-dev gulp 	// install gulp local in project
 npm i --save-dev gulp-concat
 
 
+
 -------- install android-studio ---------
 
 link: https://dev.to/janetmutua/installing-android-studio-on-ubuntu-2204-complete-guide-1kh8
@@ -214,9 +215,20 @@ java --version 							// show jdk version
 sudo add-apt-repository ppa:maarten-fonville/android-studio 	// add reposetry
 sudo apt install android-studio -y
 
+
+--------- ionic -------------
+npm install @ionic/pwa-elements
+
+
+ionic start
+
+ionic build
+ionic cap add ios
+ionic cap add android
+
+ionic cap open ios
+ionic cap open android
+
 ionic cap sync
-
-
-
 
 
