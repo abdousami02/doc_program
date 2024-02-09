@@ -161,6 +161,16 @@ npm i --save-dev gulp 	// install gulp local in project
 npm i --save-dev gulp-concat
 
 
+--------- ionic -------------
+npm install @ionic/pwa-elements
 
+ionic start
+
+ionic build
+ionic cap add ios
+ionic cap add android
+
+ionic cap open ios
+ionic cap open android
 
 
