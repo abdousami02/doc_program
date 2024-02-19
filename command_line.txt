@@ -315,6 +315,7 @@ wget <linkOfPackage>						// download package from web
 =========== ssh ==================
 
 ssh badnjhvi@66.29.141.209 -p 21098
+ssh -i key.pem shell@3.252.167.165 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa
 
 ssh username@domain.com	-p 22		// connect to server with ssh connect
 
