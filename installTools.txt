@@ -38,7 +38,7 @@ install lib php8.2
 
 site : https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
 
-apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
+// apt install apache2 php libapache2-mod-php php-mysql mysql-server phpmyadmin
 
 sudo apt install php8.2 php8.2-cli php8.2-{curl,mbstring,intl,gd,xml,zip,mysql} // also {bcmath, common}
 sudo apt install php8.2-fpm
@@ -117,8 +117,6 @@ Include the following line at the bottom of the file, save and quit:
  - Include /etc/phpmyadmin/apache.conf
 
 
-$ Include /etc/phpmyadmin/apache.conf
-
 ----- delete mysql final ------------
 
 sudo -i
@@ -147,6 +145,13 @@ add in the last:
 $cfg['SendErrorReports'] = 'never';
 
 
+---- switch php version ----------
+
+sudo update-alternatives --config php 		// show all config of php version
+sudo update-alternatives --set php /usr/bin/php8.2 		// set php version
+
+sudo a2dismod php7.3 			// change version of apache php
+sudo a2enmod php8.2
 
 
 
